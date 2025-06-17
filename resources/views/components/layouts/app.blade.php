@@ -31,14 +31,14 @@
 
     <main @class(['bg-neutral-50' => request()->is('services/*')]) class="space-y-4 overflow-hidden">
         <div id="mobile-navbar"
-            class="fixed z-[1] w-[85%] h-[202px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm">
+            class="fixed z-[1] transition-all w-[85%] h-[202px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm">
             <div class="grid gap-2 space-x-2 p-2 items-center">
-                <a class="text-[#fff] font-bold" href="/" wire:navigate>Accueil</a>
-                <a class="hover:text-white" href="/services" wire:navigate>Services</a>
-                <a class="hover:text-white" href="/nos-realisations" wire:navigate>Nos réalisations</a>
-                <a class="hover:text-white" href="/a-propos" wire:navigate>À propos</a>
-                <a class="hover:text-white" href="/notre-equipe" wire:navigate>Team Genius</a>
-                <a class="hover:text-white" href="/contact" wire:navigate>Contactez-nous</a>
+                <a class="text-[#fff] font-bold" href="/">Accueil</a>
+                <a class="hover:text-white" href="/services">Services</a>
+                <a class="hover:text-white" href="/nos-realisations">Nos réalisations</a>
+                <a class="hover:text-white" href="/a-propos">À propos</a>
+                <a class="hover:text-white" href="/notre-equipe">Team Genius</a>
+                <a class="hover:text-white" href="/contact">Contactez-nous</a>
             </div>
         </div>
 

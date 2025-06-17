@@ -31,4 +31,5 @@ let menuButton = document.querySelector("#menu-button");
 
 menuButton.addEventListener("click", () => {
     mobileNavbar.classList.toggle("mobile-open");
+    console.log('Hello')
 });

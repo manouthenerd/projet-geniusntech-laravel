@@ -5,17 +5,17 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('/fonts/Lato.ttf');
+    src: url('/public/fonts/Lato.ttf');
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('/fonts/Manrope.ttf');
+    src: url('/public/fonts/Manrope.ttf');
 }
 
 @font-face {
     font-family: 'Nunito';
-    src: url('/fonts/Nunito.ttf');
+    src: url('/public/fonts/Nunito.ttf');
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
