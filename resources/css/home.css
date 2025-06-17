@@ -1,0 +1,20 @@
+#header-section {
+    background-image: url('/images/tech.jpg');
+    background-position: top/right;
+    background-size: cover;
+    background-clip: padding-box;
+}
+
+#services {
+    align-items: last baseline;
+}
+
+#partners li img {
+    object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 14px;
+    }
+}

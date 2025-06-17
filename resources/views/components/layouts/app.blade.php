@@ -1,0 +1,110 @@
+<x-partials.header :title="$title"/>
+
+<body>
+
+    <header class="w-full z-[999] min-h-10 p-2 bg-transparent backdrop-blur-lg font-thin sticky top-0">
+        <nav class="flex justify-around max-[960px]:justify-between max-[960px]:px-8 items-center">
+            <a href="/">
+                <img src="/images/logo-genius.png" width="170" height="55" />
+            </a>
+
+            <div id="mainLinks" class="flex gap-2 text-sm space-x-2 items-center max-[960px]:hidden">
+                <a @class(['text-[#025686] font-bold' => request()->is('/')]) class="font-bold" href="/" wire:navigate>Accueil</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('services')]) class="hover:text-[#025686]" href="/services" wire:navigate>Services</a>
+                <a @class([
+                    'text-[#025686] font-bold' => request()->is('nos-realisations'),
+                ]) class="hover:text-[#025686]" href="/nos-realisations" wire:navigate>Nos
+                    réalisations</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('a-propos')]) class="hover:text-[#025686]" href="/a-propos" wire:navigate>À propos</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('notre-equipe')]) class="hover:text-[#025686]" href="/notre-equipe" wire:navigate>Team Genius</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('contact')]) class="hover:text-[#025686]" href="/contact" wire:navigate>Contactez-nous</a>
+            </div>
+
+            <div class="max-[960px]:hidden text-sm">
+                <a @class(['text-[#025686] font-bold' => request()->is('espace')]) href="/login" wire:navigate>Espace admin</a>
+            </div>
+
+            <livewire:menu-button />
+
+        </nav>
+    </header>
+
+    <main @class(['bg-neutral-50' => request()->is('services/*')]) class="space-y-4 overflow-hidden">
+        <div id="mobile-navbar"
+            class="fixed z-[1] w-[85%] h-[202px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm">
+            <div class="grid gap-2 space-x-2 p-2 items-center">
+                <a class="text-[#fff] font-bold" href="/" wire:navigate>Accueil</a>
+                <a class="hover:text-white" href="/services" wire:navigate>Services</a>
+                <a class="hover:text-white" href="/nos-realisations" wire:navigate>Nos réalisations</a>
+                <a class="hover:text-white" href="/a-propos" wire:navigate>À propos</a>
+                <a class="hover:text-white" href="/notre-equipe" wire:navigate>Team Genius</a>
+                <a class="hover:text-white" href="/contact" wire:navigate>Contactez-nous</a>
+            </div>
+        </div>
+
+        {{ $slot }}
+
+    </main>
+
+    <footer class="grid p-2 space-y-4 bg-[#000] text-white">
+        <div
+            class="space-y-4 space-x-6 min-[850px]:flex justify-around max-[850px]:grid max-[850px]:grid-cols-2 max-[850px]:items-center max-[850px]:justify-items-center max-[850px]:mr-[30px] max-[520px]:mr-0 max-[520px]:grid-cols-1 bg-black p-2 ">
+            <div>
+                <p class="uppercase text-[#025686] font-bold">Localisation</p>
+                <ul>
+                    <li>Treichville Rue 17 Avenue 21</li>
+                    <li>Avenue Ouezzin Coulibaly</li>
+                </ul>
+            </div>
+            <div>
+                <p class="uppercase text-[#025686] font-bold">Contacts</p>
+                <ul>
+                    <li>Phone: +225 07 5959 8830</li>
+                    <li>Phone: +225 27 2134 8794</li>
+                </ul>
+            </div>
+            <div class="max-[850px]:mr-[84px]">
+                <p class="uppercase text-[#025686] font-bold">Réseaux sociaux</p>
+                <ul class="flex items-center gap-2 min-[850px]:justify-center mt-4">
+                    <li>
+                        <a href="/#">
+                            <x-ui.linkedin />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#">
+
+                            <x-ui.facebook />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#">
+
+                            <x-ui.twitter />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="justify-end max-[520px]:mr-[65px]">
+                <p>
+                    <img class="w-[150px] h-[50px] object-contain" src="/images/logo-genius.png" />
+                </p>
+                <p>
+                    Smart Life, Best Life — ⭐
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-black grid place-content-center">
+            <pre class="text-wrap text-center">Copyright {{ date('Y') }} - Genius Network Technology </pre>
+        </div>
+    </footer>
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script> --}}
+
+    {{-- leaflet JS --}}
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</body>
+
+</html>
