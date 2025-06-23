@@ -11,12 +11,12 @@
             <div id="mainLinks" class="flex gap-2 text-sm space-x-2 items-center max-[960px]:hidden">
                 <a @class(['text-[#025686] font-bold' => request()->is('/')]) class="font-bold" href="/" wire:navigate>Accueil</a>
                 <a @class(['text-[#025686] font-bold' => request()->is('services')]) class="hover:text-[#025686]" href="/services" wire:navigate>Services</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('services')]) class="hover:text-[#025686]" href="/blogs" wire:navigate>Blogs</a>
                 <a @class([
                     'text-[#025686] font-bold' => request()->is('nos-realisations'),
                 ]) class="hover:text-[#025686]" href="/nos-realisations" wire:navigate>Nos
                     réalisations</a>
                 <a @class(['text-[#025686] font-bold' => request()->is('a-propos')]) class="hover:text-[#025686]" href="/a-propos" wire:navigate>À propos</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('notre-equipe')]) class="hover:text-[#025686]" href="/notre-equipe" wire:navigate>Team Genius</a>
                 <a @class(['text-[#025686] font-bold' => request()->is('contact')]) class="hover:text-[#025686]" href="/contact" wire:navigate>Contactez-nous</a>
             </div>
 
@@ -35,9 +35,9 @@
             <div class="grid gap-2 space-x-2 p-2 items-center">
                 <a class="text-[#fff] font-bold" href="/">Accueil</a>
                 <a class="hover:text-white" href="/services">Services</a>
+                <a class="hover:text-white" href="/blogs">Blogs</a>
                 <a class="hover:text-white" href="/nos-realisations">Nos réalisations</a>
                 <a class="hover:text-white" href="/a-propos">À propos</a>
-                <a class="hover:text-white" href="/notre-equipe">Team Genius</a>
                 <a class="hover:text-white" href="/contact">Contactez-nous</a>
             </div>
         </div>

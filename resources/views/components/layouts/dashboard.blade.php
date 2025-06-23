@@ -1,5 +1,4 @@
     <x-partials.header title="Dashboard">
-
         @fluxAppearance
     </x-partials.header>
 
@@ -10,7 +9,7 @@
         <x-partials.dashboard-sidebar />
 
         <flux:main container>
-            <x-partials.dashboard-heading/>
+            <x-partials.dashboard-heading />
 
             {{ $slot }}
         </flux:main>

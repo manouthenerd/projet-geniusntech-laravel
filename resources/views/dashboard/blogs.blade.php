@@ -33,7 +33,7 @@
 
           <article class="grid p-2 border border-slate-100 rounded w-full mt-4">
               <div class="grid grid-cols-1 p-2 bg-zinc-50">
-                  <a href="#">
+                  <div>
                       <div class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-white blog">
                           <div class="h-full">
                               <img class="rounded" src="/images/Delivery.jpeg" alt="livraison">
@@ -49,19 +49,36 @@
                                   ipsum provident nam est nobis qui laudantium inventore voluptatibus hic expedita,
                                   reiciendis pariatur odit!
                               </p>
-                              <p class="text-xs text-zinc-600">
-                                  Author • 23 mars 2025
-                              </p>
+                               <div class="text-xs text-zinc-600 space-y-4">
+                                    <p class="ml-1">Author • 23 mars 2025</p>
+                                    <div class="flex gap-4">
+                                    <flux:button 
+                                        size="sm" 
+                                        color="blue" 
+                                        href="/dashboard/blogs/:blog"
+                                    >
+                                        Modifier
+                                    </flux:button>
+
+                                    <flux:button 
+                                        size="sm" 
+                                        color="yellow" 
+                                        href="/dashboard/blogs/:blog"
+                                    >
+                                        Supprimer
+                                    </flux:button>
+                                    </div>
+                                </div>
                           </div>
                       </div>
-                  </a>
+                  </div>
               </div>
 
               <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-2 bg-zinc-50">
 
                   @foreach ([1, 2, 3, 4, 5, 6] as $num)
                       <li class="grid p-2 gap-2 shadow shadow-zinc-200 rounded bg-white blog">
-                          <a href="">
+                          <div>
                               <div>
                                   <img src="/images/Delivery.jpeg" alt="livraison">
                               </div>
@@ -77,11 +94,28 @@
                                       ipsum provident nam est nobis qui laudantium inventore voluptatibus hic expedita,
                                       reiciendis pariatur odit!
                                   </p>
-                                  <p class="text-xs text-zinc-600">
-                                      Author • 23 mars 2025
-                                  </p>
+                                <div class="text-xs text-zinc-600 space-y-4">
+                                    <p class="ml-1">Author • 23 mars 2025</p>
+                                    <div class="flex gap-4">
+                                    <flux:button 
+                                        size="sm" 
+                                        color="blue" 
+                                        href="/dashboard/blogs/:blog"
+                                    >
+                                        Modifier
+                                    </flux:button>
+
+                                    <flux:button 
+                                        size="sm" 
+                                        color="yellow" 
+                                        href="/dashboard/blogs/:blog"
+                                    >
+                                        Supprimer
+                                    </flux:button>
+                                    </div>
+                                </div>
                               </div>
-                          </a>
+                          </div>
                       </li>
                   @endforeach
 

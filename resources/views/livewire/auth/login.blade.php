@@ -9,7 +9,7 @@
 
         <a href="#"
             class="ring-3 rounded-sm ring-offset-2 ring-blue-800/70 hover:ring-blue-800 transition-all border text-xs text-zinc-600">Visiter
-            Genius Data
+            Genius Datahub
             →
         </a>
     </div>

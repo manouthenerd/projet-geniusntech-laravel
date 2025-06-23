@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 
 import './leatflet.js';
 
+import 'preline';
+
 AOS.init({
   
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -29,7 +31,8 @@ AOS.init({
 let mobileNavbar = document.querySelector("#mobile-navbar");
 let menuButton = document.querySelector("#menu-button");
 
-menuButton.addEventListener("click", () => {
+if (menuButton) {
+    menuButton.addEventListener("click", () => {
     mobileNavbar.classList.toggle("mobile-open");
-    console.log('Hello')
 });
+}
