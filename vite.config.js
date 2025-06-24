@@ -9,9 +9,10 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css', 
+                'resources/css/editor.css', 
+                'resources/css/editor.js', 
                 'resources/js/app.js', 
                 'resources/css/dasboard.css',
-                'resources/css/jodit.scss',
                 'resources/js/dasboard.js'
             ],
             refresh: true,

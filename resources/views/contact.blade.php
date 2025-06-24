@@ -32,8 +32,10 @@
                 </ul>
 
                 <p>
-                    N'hésitez pas à nous faire part de votre préoccupation via ce <span class="text-[#0f2658] font-medium">formulaire</span>, nous serons
-                    ravis de vous assister et de vous fournir les <span class="text-[#0f2658] font-medium">informations nécessaires</span>.
+                    N'hésitez pas à nous faire part de votre préoccupation via ce <span
+                        class="text-[#0f2658] font-medium">formulaire</span>, nous serons
+                    ravis de vous assister et de vous fournir les <span class="text-[#0f2658] font-medium">informations
+                        nécessaires</span>.
                 </p>
 
                 {{-- Map --}}
@@ -46,7 +48,8 @@
             <div>
                 <form action="/test" method="post" class="p-2 space-y-4">
                     @csrf
-                    <div class="grid grid-cols-2 gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
+                    <div class="grid grid-cols-2 gap-2" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="1200">
                         <flux:field>
                             <flux:label>Nom<span class="text-red-500">*</span></flux:label>
                             <flux:input type="text" placeholder="Entrer votre nom..." />
@@ -68,7 +71,7 @@
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600">
                         <flux:field>
                             <flux:label>Adresse email<span class="text-red-500">*</span></flux:label>
-                            <flux:input type="email" placeholder="exemple@gmail.com"/>
+                            <flux:input type="email" placeholder="exemple@gmail.com" />
                         </flux:field>
                     </div>
 
