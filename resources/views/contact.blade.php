@@ -15,7 +15,7 @@
     </section>
 
     <section class="my-4 min-[730px]:mx-18 max-[730px]:mx-4 shadow shadow-slate-300 rounded min-h-100">
-        <div class="grid grid-cols-2">
+        <div class="grid min-[860px]:grid-cols-2">
 
             <!-- Informations -->
             <div class="rounded bg-gradient-to-br from-amber-50 to-sky-50 p-4 space-y-2 text-zinc-600">
@@ -64,7 +64,7 @@
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600">
                         <flux:field>
                             <flux:label>Téléphone<span class="text-red-500">*</span></flux:label>
-                            <flux:input type="tel" placeholder="Entrer votre prénom..." />
+                            <flux:input type="tel" placeholder="+2250102030405" />
                         </flux:field>
                     </div>
 

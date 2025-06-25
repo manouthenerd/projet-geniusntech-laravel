@@ -2,7 +2,7 @@
 
      @vite(['resources/js/dashboard.js', 'resources/css/dashboard.css'])
 
-    <flux:sidebar.toggle id="open-menu-button" class="min-[700px]:hidden cursor-pointer" icon="bars-2" inset="left" />
+    <flux:sidebar.toggle  id="open-menu-button" class="min-[700px]:hidden cursor-pointer" icon="bars-2" inset="left" />
 
     <flux:brand href="{{route('home')}}" logo="/images/logo-genius.png" name=""
         class="max-[700px]:hidden dark:hidden" />

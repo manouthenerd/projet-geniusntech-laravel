@@ -3,12 +3,13 @@
 use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 
 
-Route::view('/', 'home')->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('/services',[ServiceController::class, 'index'] )->name('services');
 

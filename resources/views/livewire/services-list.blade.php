@@ -2,7 +2,7 @@
     
     @foreach ($services as $service)
 
-        <a href="{{ $this->href($service['title']) }}" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="{{($service['id'] * 1000)}}"
+        <a href="/services/{{ $service['identifier'] }}" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000"
             class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
 
             <div>

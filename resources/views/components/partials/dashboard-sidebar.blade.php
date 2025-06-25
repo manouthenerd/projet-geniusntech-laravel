@@ -1,4 +1,5 @@
-<div id="sidebar" class="close-sidebar px-2 grid h-full w-[256px] shadow shadow-slate-100 fixed bg-slate-200 z-[999]">     
+<div id="sidebar" class="close-sidebar px-2 grid h-full w-[256px] shadow shadow-slate-100 fixed bg-slate-200 z-[999] left-[-257px]
+  left-0">     
          <div class="grid w-full">
             <flux:button id="close-menu-button" icon="x-mark" variant="ghost" class="cursor-pointer justify-self-end" />
                 <a href="{{route('home')}}" wire:navigate>

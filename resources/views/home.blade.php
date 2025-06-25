@@ -17,7 +17,9 @@
                  <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500">
                      <button
                          class="bg-black text-white font-bold border border-black ring-1 ring-black ring-offset-2 rounded p-2 text-center">
-                         Une idée de projet ? <span class="animate-pulse">📝</span>
+                        <a href="{{route("contact")}}" wire:navigate>
+                            Une idée de projet ? <span class="animate-pulse">📝</span>
+                        </a>
                      </button>
                  </div>
              </div>
@@ -63,64 +65,24 @@
              </div>
              <div class="w-full">
                  <ul id="services" class="grid grid-cols-2 max-[830px]:grid-cols-1 w-full space-y-4 space-x-4">
-
-                     <li data-aos="fade-up" data-aos-duration="1300" data-aos-delay="1000"
-                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
+                    @foreach ($services as $service)
+                        
+                    
+                     <a href="services/{{$service['identifier']}}" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="1000"
+                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto" wire:navigate>
                          <div>
                              <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                 src="/images/electricity.png" />
+                                 src="{{$service['image']}}" />
                          </div>
                          <div class="text-white flex flex-col justify-around">
-                             <h3 class="text-slate-400">Electricité</h3>
+                             <h3 class="text-slate-400">{{$service["title"]}}</h3>
                              <p class="text-slate-600 w-full">
-                                 De l’installation à la maintenance, nos techniciens sont à votre disposition.
+                                 {{$service['summary']}}
                              </p>
                          </div>
-                     </li>
+                     </a>
 
-                     <li data-aos="fade-up" data-aos-duration="1700" data-aos-delay="1200"
-                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
-                         <div>
-                             <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                 src="/images/camera.png" />
-                         </div>
-                         <div class="text-white flex flex-col justify-around">
-                             <h3 class="text-slate-400">Vidéo surveillance</h3>
-                             <p class="text-slate-600 w-full">
-                                 Garder un oeil sur les flux entrants et sortants de vos activités avec des
-                                 outils et technologies de pointe.
-                             </p>
-                         </div>
-                     </li>
-
-                     <li data-aos="fade-up" data-aos-duration="1700" data-aos-delay="1400"
-                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
-                         <div>
-                             <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                 src="/images/electronic.jpg" />
-                         </div>
-                         <div class="text-white flex flex-col justify-around">
-                             <h3 class="text-slate-400">Sécurité électronique</h3>
-                             <p class="text-slate-600 w-full">
-                                 Opter pour une sécurité extrême pour vos systèmes électroniques pour la protections de
-                                 vos biens.
-                             </p>
-                         </div>
-                     </li>
-
-                     <li data-aos="fade-up" data-aos-duration="1700" data-aos-delay="1600"
-                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
-                         <div>
-                             <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                 src="/images/com.png" />
-                         </div>
-                         <div class="text-white flex flex-col justify-around">
-                             <h3 class="text-slate-400">Télécommunication</h3>
-                             <p class="text-slate-700 w-full">
-                                 La technologie évoluée de communication indispensable à notre ère.
-                             </p>
-                         </div>
-                     </li>
+                     @endforeach
 
                  </ul>
              </div>

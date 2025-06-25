@@ -36,7 +36,7 @@
                   <div>
                       <div class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-white blog">
                           <div class="h-full">
-                              <img class="rounded" src="/images/Delivery.jpeg" alt="livraison">
+                              <img class="rounded" src="/images/services/Delivery.jpeg" alt="livraison">
                           </div>
                           <div class="flex flex-col justify-evenly p-2">
                               <h4 class="text-zinc-600">Livraison à moto</h4>

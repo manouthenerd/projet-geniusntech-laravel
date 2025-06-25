@@ -1,6 +1,6 @@
 <x-partials.header :title="$title"/>
 
-<body>
+<body class="overflow-x-hidden">
 
     <header class="w-full z-[999] min-h-10 p-2 bg-transparent backdrop-blur-lg font-thin sticky top-0">
         <nav class="flex justify-around max-[960px]:justify-between max-[960px]:px-8 items-center">
@@ -29,16 +29,16 @@
         </nav>
     </header>
 
-    <main @class(['bg-neutral-50' => request()->is('services/*')]) class="space-y-4 overflow-hidden">
+    <main @class(['bg-neutral-50' => request()->is('services/*')]) class="space-y-4">
         <div id="mobile-navbar"
             class="fixed z-[1] transition-all w-[85%] h-[202px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm top-[80px]">
             <div class="grid gap-2 space-x-2 p-2 items-center">
-                <a class="text-[#fff] font-bold" href="/">Accueil</a>
-                <a class="hover:text-white" href="/services">Services</a>
-                <a class="hover:text-white" href="/blogs">Blogs</a>
-                <a class="hover:text-white" href="/nos-realisations">Nos réalisations</a>
-                <a class="hover:text-white" href="/a-propos">À propos</a>
-                <a class="hover:text-white" href="/contact">Contactez-nous</a>
+                <a class="text-[#fff] font-bold" href="{{route('home')}}">Accueil</a>
+                <a class="hover:text-white" href="{{route('services')}}">Services</a>
+                <a class="hover:text-white" href="{{route("blogs")}}">Blogs</a>
+                <a class="hover:text-white" href="{{route('achievements')}}">Nos réalisations</a>
+                <a class="hover:text-white" href="{{route('about')}}">À propos</a>
+                <a class="hover:text-white" href="{{route("contact")}}">Contactez-nous</a>
             </div>
         </div>
 

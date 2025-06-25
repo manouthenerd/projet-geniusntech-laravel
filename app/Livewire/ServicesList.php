@@ -15,14 +15,9 @@ class ServicesList extends Component
         return view('livewire.services-list')->with(['services' => $this->services]);
     }
 
-    public function href($string)
-    {
-        return "/services/" . Str::lower(Str::slug($string));
-    }
-
     public function mount()
     {
-        $services = Service::all(['id', 'title', 'summary', 'description', 'image']);
+        $services = Service::all(['id', 'identifier', 'title', 'summary', 'description', 'image']);
 
         $this->services = $services;
     }
