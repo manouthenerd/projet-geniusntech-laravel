@@ -8,7 +8,8 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        return view('services');
+        $services = Service::all(['id', 'identifier', 'title', 'summary', 'image']);
+        return view('services', ['services' => $services]);
     }
 
     public function show($slug) 

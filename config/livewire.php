@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'layout' => 'components.layouts.app',
+    'layout' => 'components.layouts.dashboard',
     'login' => 'components.layouts.login',
     'auth' => 'components.layouts.auth',
 

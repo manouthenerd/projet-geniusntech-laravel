@@ -44,30 +44,22 @@
         </div>
 
         <article class="grid p-2 border border-slate-100 rounded w-full mt-4">
-            <div class="grid grid-cols-1 p-2 bg-zinc-50">
-                <div>
-                    <div
-                        class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-white blog">
-                        <div class="h-full">
-                            <img class="rounded" src="/images/services/Delivery.jpeg" alt="livraison">
-                        </div>
-                        <div class="flex flex-col justify-evenly p-2">
-                            <h4 class="text-zinc-600">Livraison à moto</h4>
-                            <p class="text-zinc-500 h-[100px] overflow-hidden text-ellipsis">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit similique totam vel
-                                ducimus natus quod recusandae autem, consequatur esse voluptate amet magni ad,
-                                expedita
-                                ipsum optio nesciunt eligendi eos asperiores tenetur voluptatem, neque hic ab?
-                                Repellendus
-                                ipsum provident nam est nobis qui laudantium inventore voluptatibus hic expedita,
-                                reiciendis pariatur odit!
-                            </p>
-                            <div class="text-xs text-zinc-600 space-y-4">
-                                <p class="ml-1">Author • 23 mars 2025</p>
-                                <div class="flex gap-4">
-
-                                    <flux:button class="w-full text-center transition-colors hover:text-[#025889]" href="/dashboard/blogs/:blog">
-                                        Lire tout l'article
+            <div>
+                <div class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-[#00669A] blog">
+                    <div>
+                        <img style="height: 300px;width: 100%;object-fit: cover;" class="rounded"
+                            src="{{ asset($first_article->image) }}" alt="livraison">
+                    </div>
+                    <div class="flex flex-col justify-evenly p-2">
+                        <h4 class="text-white font-bold underline">{{ $first_article->title }}</h4>
+                        <div class="text-zinc-500">
+                            <div class="h-[150px] overflow-hidden text-[#e2e2e2e3]">{{ $first_article->content }}</div>
+                            <div class="text-xs text-white space-y-4">
+                                <p class="ml-1 text-white font-bold">Author • 23 mars 2025</p>
+                                <div class="w-full">
+                                    <flux:button wire:navigate size="sm" class="w-full" color="blue"
+                                        href="blogs/{{ $first_article->id }}">
+                                        Lire la suite
                                     </flux:button>
                                 </div>
                             </div>
@@ -78,29 +70,23 @@
 
             <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-2 bg-zinc-50">
 
-                @foreach ([1, 2, 3, 4, 5, 6] as $num)
-                    <li class="grid p-2 gap-2 shadow shadow-zinc-200 rounded bg-white blog">
+                @foreach ($articles as $article)
+                    <li class="grid cursor-pointer group hover:bg-[#00669A] p-2 gap-2 shadow shadow-zinc-200 rounded bg-white blog">
                         <div>
                             <div>
-                                <img src="/images/services/Delivery.jpeg" alt="livraison">
+                                <img src="{{asset($article->image)}}" alt="livraison">
                             </div>
                             <div class="flex flex-col justify-evenly p-2 space-y-2">
-                                <h4 class="text-zinc-800">Livraison à moto</h4>
-                                <p class="text-zinc-500 h-[100px] overflow-hidden text-ellipsis">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit similique totam
-                                    vel
-                                    ducimus natus quod recusandae autem, consequatur esse voluptate amet magni ad,
-                                    expedita
-                                    ipsum optio nesciunt eligendi eos asperiores tenetur voluptatem, neque hic ab?
-                                    Repellendus
-                                    ipsum provident nam est nobis qui laudantium inventore voluptatibus hic
-                                    expedita,
-                                    reiciendis pariatur odit!
-                                </p>
+                                <h4 class="text-zinc-800 font-bold group-hover:underline group-hover:text-white">{{$article->title}}</h4>
+                                <div class="text-zinc-500 group-hover:text-[#e2e2e2e3] h-[100px] overflow-hidden text-ellipsis">
+                                    {!! $article->content !!}
+                                </div>
                                 <div class="text-xs text-zinc-600 space-y-4">
-                                    <p class="ml-1">Author • 23 mars 2025</p>
+                                    <p class="ml-1 group-hover:text-white">Author • 23 mars 2025</p>
                                     <div class="">
-                                        <flux:button size="sm" class="w-full text-center transition-colors hover:text-[#025889]" href="/dashboard/blogs/:blog">
+                                        <flux:button size="sm"
+                                            class="w-full text-center transition-colors hover:text-[#025889]"
+                                            href="blogs/{{$article->id}}">
                                             Lire tout l'article
                                         </flux:button>
                                     </div>

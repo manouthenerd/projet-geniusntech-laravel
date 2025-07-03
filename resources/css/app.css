@@ -161,7 +161,7 @@ footer {
 
 .blog {
     border: 2px solid transparent;
-    transition: border .5s ;
+    transition: all .4s ;
 }
 
 .blog:hover {
@@ -172,4 +172,13 @@ footer {
 
 #logout-button {
     align-self: center;
+}
+
+list {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+#text-editor {
+    min-height: 200px;
 }

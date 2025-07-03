@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Service;
 use Livewire\Component;
-use Illuminate\Support\Str;
 
 class ServicesList extends Component
 {
@@ -21,4 +20,5 @@ class ServicesList extends Component
 
         $this->services = $services;
     }
+
 }

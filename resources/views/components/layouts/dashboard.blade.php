@@ -1,6 +1,9 @@
     <x-partials.header title="Dashboard">
         @fluxAppearance
     </x-partials.header>
+    @livewireScripts
+
+    <x-rich-text::styles />
 
     <body class="h-full bg-white dark:bg-zinc-800">
         <x-partials.dashboard-header />
@@ -14,5 +17,8 @@
             {{ $slot }}
         </flux:main>
 
+
         @fluxScripts
     </body>
+
+    

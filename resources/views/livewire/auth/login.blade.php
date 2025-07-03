@@ -16,7 +16,7 @@
 
     <div id="form-wrapper" class="border border-slate-200 shadow shadow-slate-300 bg-white rounded">
 
-        <form wire:submit.prevent="login" method="post" class="mx-auto p-12">
+        <form wire:submit="login" method="post" class="mx-auto p-12">
 
             <div class="mb-5">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

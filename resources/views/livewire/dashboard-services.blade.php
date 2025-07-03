@@ -1,3 +1,5 @@
+<div>
+
     <section>
         <div class="flex justify-between items-center p-2">
             <h3 class="underline text-danger">Vos services actuels</h3>
@@ -57,3 +59,5 @@
             </article>
         </div>
     </section>
+
+</div>

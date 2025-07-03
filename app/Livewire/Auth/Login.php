@@ -8,17 +8,17 @@ use Livewire\Attributes\Validate;
 
 class Login extends Component
 {
-    #[Validate('required|min:10|email')]
+    #[Validate('required|email')]
     public $email = '';
 
-    #[Validate('required|min:10')]
+    #[Validate('required|password')]
     public $password = '';
 
     public function login() {
         return $this->email;
     }
 
-    #[Layout('components.layouts.login')]
+    // #[Layout('components.layouts.login')]
     public function render()
     {
         return view('livewire.auth.login');

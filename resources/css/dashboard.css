@@ -1,3 +1,18 @@
 .close-sidebar {
     transition: all .5s;
 }
+
+#close-button {
+    border: 3px solid #8e8e8e;
+    border-radius: 50px;
+    justify-self: end;
+    top: 30px;
+}
+
+.hide-close-btn {
+    display: none;
+}
+
+.trix-button--icon-code {
+    display: none !important;
+}

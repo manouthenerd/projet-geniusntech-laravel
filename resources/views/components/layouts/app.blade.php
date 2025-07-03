@@ -1,5 +1,7 @@
 <x-partials.header :title="$title"/>
 
+<x-rich-text::styles theme="richtextlaravel" />
+
 <body class="overflow-x-hidden">
 
     <header class="w-full z-[999] min-h-10 p-2 bg-transparent backdrop-blur-lg font-thin sticky top-0">
