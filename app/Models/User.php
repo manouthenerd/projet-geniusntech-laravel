@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class User extends Authenticatable
@@ -57,5 +58,16 @@ class User extends Authenticatable
             ->take(2)
             ->map(fn ($word) => Str::substr($word, 0, 1))
             ->implode('');
+    }
+
+    public static function authenticate(string $email, string $password){
+
+        $is_auth = Auth::attempt(['email' => $email, 'password' => $password]);
+
+        if($is_auth) {
+            request()->session()->regenerate();
+        }
+
+        return $is_auth;
     }
 }

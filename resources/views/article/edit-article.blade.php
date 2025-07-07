@@ -31,24 +31,6 @@
                         <x-partials.error error='title'/>
                     </div>
 
-                    <div>
-                        <label for="hs-feedback-post-comment-textarea-1"
-                            class="block mb-2 text-zinc-400 text-sm font-medium dark:text-white">
-                            Résumé de l'article
-                            @if (request()->is("dashboard/blogs/$id"))
-                            <x-ui.label-tag text="En lecture uniquement"/>
-                            @endif
-                        </label>
-                        <div class="mt-1">
-                            <textarea :readonly="{{request()->is("dashboard/blogs/$id")}}"
-                                wire:model='summary' 
-                                id="hs-feedback-post-comment-textarea-1" name="summary" rows="3"
-                                class="border text-zinc-600 bg-white py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                placeholder="Un résumé en 2 ou 3 lignes...✍️">{{ $article['summary'] }}</textarea>
-                                <x-partials.error error='summary'/>
-                        </div>
-                    </div>
-
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
                             class="block mb-2 text-zinc-400 text-sm font-medium dark:text-white">

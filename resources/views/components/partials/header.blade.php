@@ -10,7 +10,7 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
 
-    @vite(['resources/js/app.js', 'resources/css/app.css', 'resources/css/editor.css', 'resources/js/editor.js'])
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
 
 
 </head>

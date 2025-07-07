@@ -19,6 +19,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        User::factory()->create([
+            'name' => 'Genius Admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'password',
+        ]);
+
         $this->call(ServiceSeeder::class);
     }
 }

@@ -22,17 +22,6 @@
                             <x-partials.error error="title"/>
                     </div>
 
-                    <div>
-                        <label for="hs-feedback-post-comment-textarea-1"
-                            class="block mb-2 text-sm font-medium dark:text-white">Résumé de l'article</label>
-                        <div class="mt-1">
-                            <textarea id="hs-feedback-post-comment-textarea-1" name="summary" rows="3"
-                                class="border py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                placeholder="Un résumé en 2 ou 3 lignes...✍️" required>{{old('summary')}}</textarea>
-                                <x-partials.error error="summary"/>
-                        </div>
-                    </div>
-
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
                             class="block mb-2 text-sm font-medium dark:text-white">Préciser la catégorie de
@@ -63,9 +52,14 @@
                         <label for="editor" class="block mb-2 text-sm font-medium dark:text-white">
                             Rédaction de l'article
                         </label>
-                        <input type="hidden" id="text-editor_input" name="content" value="{{old("content")}}">
-                        <x-trix-input value="{{old('content')}}" required class="p-4 h-[350px] overflow-scroll " id="text-editor"
-                            name="content" placeholder="Contenu de l'article ici..." />
+                        <input type="hidden" id="text-editor_input" name="content" value="{{ old('content') }}">
+                        <x-trix-input
+                            id="text-editor"
+                            name="content"
+                            value="{{ old('content') }}"
+                            required
+                            placeholder="Contenu de l'article ici..."
+                        />
                         <x-partials.error error="content"/>
                     </div>
 
@@ -81,3 +75,5 @@
     </div>
 
 </x-layouts.dashboard>
+
+{{-- //TODO Préserver la valeur de l'input lors de la submission du formulaire --}}

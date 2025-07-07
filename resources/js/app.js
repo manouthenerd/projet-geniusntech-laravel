@@ -3,14 +3,11 @@ import "../css/app.css";
 import "../css/home.css";
 
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 
-import './leatflet.js';
-
-import 'preline';
+import "preline";
 
 AOS.init({
-  
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
     startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
     initClassName: "aos-init", // class applied after initialization
@@ -32,8 +29,11 @@ AOS.init({
 let mobileNavbar = document.querySelector("#mobile-navbar");
 let menuButton = document.querySelector("#menu-button");
 
-if (menuButton) {
+// if (menuButton) {
     menuButton.addEventListener("click", () => {
-    mobileNavbar.classList.toggle("mobile-open");
-});
-}
+        mobileNavbar.classList.toggle("mobile-open");
+        console.log("Hello World")
+    });
+// }
+
+console.log("Hello")
