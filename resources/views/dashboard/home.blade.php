@@ -1,7 +1,7 @@
 <x-layouts.dashboard>
     <section class="border border-slate-100 rounded p-4 shadow-inner">
 
-        <div class="p-4 w-full grid grid-cols-3 gap-2">
+        <div class="p-4 w-full flex justify-center flex-wrap gap-2">
             <x-ui.card>
                 <x-slot:head>
                     L'univers du blogging
