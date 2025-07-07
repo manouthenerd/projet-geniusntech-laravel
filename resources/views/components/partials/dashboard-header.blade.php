@@ -32,7 +32,6 @@
             border-bottom: transparent;
             border-left-color: #00669a;
             border-radius: 50px;
-
         }
 
         #circle-box,

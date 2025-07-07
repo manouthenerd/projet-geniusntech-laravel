@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboard\BlogController;
+use App\Livewire\DashboardArticles;
 use App\Livewire\DashboardServices;
 
 Route::get('dashboard', function () {
@@ -13,7 +14,7 @@ Route::get('dashboard/projets-realises', function () {
 
 Route::get('dashboard/services', DashboardServices::class)->name('dashboard.services');
 
-Route::get('dashboard/blogs', [BlogController::class, 'index'])->name('dashboard.blogs');
+Route::get('dashboard/blogs', DashboardArticles::class)->name('dashboard.blogs');
 
 Route::get('dashboard/blogs/create', [BlogController::class, 'create'])->name('dashboard.create-blog');
 

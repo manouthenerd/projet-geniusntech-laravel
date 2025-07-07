@@ -21,7 +21,8 @@
                             @endif
                         </label>
 
-                        <input :readonly="{{request()->is("dashboard/blogs/$id")}}" 
+                        <input 
+                            @readonly(request()->is("dashboard/blogs/$id"))
                             wire:model='title'
                             name="title" type="text"
                             id="hs-feedback-post-comment-name-1"
@@ -42,7 +43,7 @@
                         <input 
                             wire:model='category'
                             value="{{$article['category']}}"
-                            :readonly="{{request()->is("dashboard/blogs/$id")}}" name="category"
+                            @readonly(request()->is("dashboard/blogs/$id")) name="category"
                             placeholder="Technologie, éducation, divertissement" type="text" id="category"
                             class="border bg-white text-zinc-600 py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                             <x-partials.error error='category'/>
@@ -57,7 +58,7 @@
                     @endif
 
                     <label class="block mb-2 text-zinc-400 text-sm font-medium dark:text-white">Image associée à l'article</label>
-                    <div :readonly="{{request()->is("dashboard/blogs/$id")}}"
+                    <div @readonly(request()->is("dashboard/blogs/$id"))
                         class="h-[300px] bg-white overflow-hidden object-cover border border-zinc-100 rounded grid place-content-center p-2">
                         <flux:button id="close-button" class="hide-close-btn" icon="x-mark" variant="subtle" />
                         <div>
