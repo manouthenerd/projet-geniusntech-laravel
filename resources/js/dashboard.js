@@ -1,3 +1,5 @@
+import "../js/loader.js";
+
 const upload = document.querySelector("#upload-input");
 
 let image = document.querySelector("#image");

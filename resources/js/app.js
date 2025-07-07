@@ -1,6 +1,7 @@
 import "./libs/trix";
 import "../css/app.css";
 import "../css/home.css";
+import "../js/loader.js";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -29,11 +30,9 @@ AOS.init({
 let mobileNavbar = document.querySelector("#mobile-navbar");
 let menuButton = document.querySelector("#menu-button");
 
-// if (menuButton) {
+if (menuButton) {
     menuButton.addEventListener("click", () => {
         mobileNavbar.classList.toggle("mobile-open");
         console.log("Hello World")
     });
-// }
-
-console.log("Hello")
+}

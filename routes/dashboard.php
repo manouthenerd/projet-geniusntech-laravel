@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\dashboard\BlogController;
 use App\Livewire\DashboardServices;
-use Illuminate\Http\Request;
 
 Route::get('dashboard', function () {
     return view('dashboard.home');
