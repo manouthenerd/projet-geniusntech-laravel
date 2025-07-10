@@ -1,4 +1,4 @@
-<div>
+<x-layouts.app>
 
     <x-slot:title>
         Blogs
@@ -17,45 +17,45 @@
     <section>
         <div class="flex justify-between gap-4 items-center m-[1.2em] max-[980px]:grid max-[980px]:grid-cols-1">
             <div class="flex py-4 flex-nowrap overflow-x-scroll gap-4 items-center">
-                <flux:button wire:click="getByCategory('all')" class="hover:cursor-pointer">
-                    <flux:badge color="{{ $selectedCategory == 'all' ? 'blue' : '' }}">Toutes catégories</flux:badge>
+                <flux:button class="hover:cursor-pointer">
+                    <flux:badge color="blue">Toutes catégories</flux:badge>
                 </flux:button>
 
-                @foreach ($categories as $category)
-                    <flux:button wire:click="getByCategory('{{ $category }}')" class="hover:cursor-pointer">
-                        <flux:badge color="{{ $selectedCategory == $category ? 'blue' : '' }}">
-                            {{ $category }}
-                        </flux:badge>
-                    </flux:button>
-                @endforeach
+                <flux:button class="hover:cursor-pointer">
+                    <flux:badge>
+                        Sécurité
+                    </flux:badge>
+                </flux:button>
+
+                <flux:button class="hover:cursor-pointer">
+                    <flux:badge>Agriculture</flux:badge>
+                </flux:button>
+
+                <flux:button class="hover:cursor-pointer">
+                    <flux:badge>Vidéo surveillance</flux:badge>
+                </flux:button>
             </div>
 
             <div>
-                <flux:input 
-                    class="hover:cursor-pointer"
-                    type="search"
-                    icon="magnifying-glass"
-                    placeholder="Titre de l'article..." 
-                    wire:model.live.debounce.250ms="search"
-                    wire:key="search-input"
-                />
+                <flux:input class="w-[300px]! hover:cursor-pointer" type="search" icon="magnifying-glass"
+                    placeholder="Titre du blog..." />
             </div>
+
         </div>
 
         <article class="grid p-2 border border-slate-100 rounded w-full mt-4">
-            @if($first_article)
             <div>
                 <div class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-[#00669A] blog">
                     <div>
                         <img style="height: 300px;width: 100%;object-fit: cover;" class="rounded"
-                            src="{{ asset($first_article->image) }}" alt="{{ $first_article->title }}">
+                            src="{{ asset($first_article->image) }}" alt="livraison">
                     </div>
                     <div class="flex flex-col justify-evenly p-2">
                         <h4 class="text-white font-bold underline">{{ $first_article->title }}</h4>
                         <div class="text-zinc-500">
-                            <div class="h-[150px] overflow-hidden text-[#e2e2e2e3]">{!! $first_article->content !!}</div>
+                            <div class="h-[150px] overflow-hidden text-[#e2e2e2e3]">{{ $first_article->content }}</div>
                             <div class="text-xs text-white space-y-4">
-                                <p class="ml-1 text-white font-bold">Publié le 23 mars 2025</p>
+                                <p class="ml-1 text-white font-bold">Author • 23 mars 2025</p>
                                 <div class="w-full">
                                     <flux:button wire:navigate size="sm" class="w-full" color="blue"
                                         href="blogs/{{ $first_article->id }}">
@@ -67,29 +67,26 @@
                     </div>
                 </div>
             </div>
-            @endif
 
-            <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-2 bg-zinc-50">
-                @forelse ($articles as $article)
-                    <li
-                        class="grid cursor-pointer group hover:bg-[#00669A] p-2 gap-2 shadow shadow-zinc-200 rounded bg-white blog">
+            <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-4 bg-zinc-50">
+
+                @foreach ($articles as $article)
+                    <li class="grid group hover:bg-[#00669A] p-2 gap-2 shadow shadow-zinc-200 rounded bg-white blog">
                         <div>
                             <div>
-                                <img src="{{ asset($article->image) }}" alt="{{ $article->title }}">
+                                <img src="{{asset($article->image)}}" alt="{{$article->title}}">
                             </div>
                             <div class="flex flex-col justify-evenly p-2 space-y-2">
-                                <h4 class="text-zinc-800 font-bold group-hover:underline group-hover:text-white">
-                                    {{ $article->title }}</h4>
-                                <div
-                                    class="text-zinc-500 group-hover:text-[#e2e2e2e3] h-[100px] overflow-hidden text-ellipsis">
+                                <h4 class="text-zinc-800 font-bold group-hover:underline group-hover:text-white">{{$article->title}}</h4>
+                                <div class="text-zinc-500 group-hover:text-[#e2e2e2e3] h-[100px] overflow-hidden text-ellipsis">
                                     {!! $article->content !!}
                                 </div>
                                 <div class="text-xs text-zinc-600 space-y-4">
-                                    <p class="ml-1 group-hover:text-white">Publié le 23 mars 2025</p>
+                                    <p class="ml-1 group-hover:text-white">Author • 23 mars 2025</p>
                                     <div class="">
                                         <flux:button size="sm"
                                             class="w-full text-center transition-colors hover:text-[#025889]"
-                                            href="blogs/{{ $article->id }}" wire:navigate>
+                                            href="blogs/{{$article->id}}">
                                             Lire tout l'article
                                         </flux:button>
                                     </div>
@@ -97,13 +94,12 @@
                             </div>
                         </div>
                     </li>
-                @empty
-                    <li class="col-span-3 text-center text-zinc-400 py-8">Aucun article trouvé.</li>
-                @endforelse
+                @endforeach
+
             </ul>
 
+            {{-- Pagination here --}}
 
         </article>
     </section>
-
-</div>
+</x-layouts.app>

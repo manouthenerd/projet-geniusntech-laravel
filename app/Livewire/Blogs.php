@@ -2,47 +2,62 @@
 
 namespace App\Livewire;
 
+use Flux\Flux;
 use App\Models\Blog;
-use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\Attributes\Layout;
 
 class Blogs extends Component
 {
     public $first_article;
     public $categories;
     public $articles;
-    public $text;
     public $selectedCategory = 'all';
+    public $search = "";
 
     public function mount()
     {
         $this->categories = Blog::distinct()->pluck('category');
-        $this->loadAllArticles();
+        $this->updateArticles();
     }
 
-    public function loadAllArticles()
+    public function updatedSearch()
     {
-        $this->first_article = Blog::first(['id', 'title', 'content', 'image']);
-        $this->articles = Blog::where('id', '<>', optional($this->first_article)->id)
-            ->get(['id', 'title', 'content', 'image']);
+        $this->updateArticles();
     }
 
     public function getByCategory(string $category)
     {
         $this->selectedCategory = $category;
-        $this->categories = Blog::distinct()->pluck('category');
+        $this->updateArticles();
+    }
 
-        if ($category === 'all') {
-            $this->loadAllArticles();
+    public function updateArticles()
+    {
+        $query = Blog::query();
+
+        // Filtre par catégorie si ce n'est pas "all"
+        if ($this->selectedCategory !== 'all') {
+            $query->where('category', $this->selectedCategory);
+        }
+
+        // Filtre par recherche si besoin
+        if (!empty($this->search)) {
+            $query->where('title', 'like', '%' . $this->search . '%');
+        }
+
+        // Récupère le premier article
+        $this->first_article = $query->first(['id', 'title', 'content', 'image']);
+
+        // Récupère les autres articles
+        if ($this->first_article) {
+            $this->articles = (clone $query)
+                ->where('id', '<>', $this->first_article->id)
+                ->get(['id', 'title', 'content', 'image']);
+
         } else {
-            $this->first_article = Blog::where('category', $category)->first(['id', 'title', 'content', 'image']);
-            if ($this->first_article) {
-                $this->articles = Blog::where('category', $category)
-                    ->where('id', '<>', $this->first_article->id)
-                    ->get(['id', 'title', 'content', 'image']);
-            } else {
-                $this->articles = collect();
-            }
+            $this->articles = collect();
         }
     }
 

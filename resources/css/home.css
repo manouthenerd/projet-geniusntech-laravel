@@ -13,10 +13,16 @@
     object-fit: contain;
 }
 
+#close-mark {
+    position: fixed;
+    right: 12px;
+    top: 11px;
+    color: #a6a6a6;
+    fill: #a6a6a6;
+}
+
 @media screen and (max-width: 600px) {
     h2 {
         font-size: 14px;
     }
 }
-
-
