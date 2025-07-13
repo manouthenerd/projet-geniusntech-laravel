@@ -108,8 +108,3 @@ class BlogController extends Controller
         return redirect()->back();
     }
 }
-
-
-// Mercredi: Gestion des articles => Création, Edition et Suppression; Gestion des services à 50%
-// Jeudi: Création de services, suppression + édition
-// Page des projets + ajout de projet, édition + suppression

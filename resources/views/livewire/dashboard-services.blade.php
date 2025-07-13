@@ -16,10 +16,6 @@
             <article class="mx-8">
 
                 <div>
-
-                </div>
-
-                <div>
                     <div class="w-full">
 
                         <ul id="services"
@@ -43,10 +39,10 @@
                                     </div>
 
                                     <div>
-                                        <flux:button href="dashboard/services/{{ $service['id'] }}">
+                                        <flux:button href="services/{{ $service['id'] }}">
                                             <flux:badge color="blue">Modifier</flux:badge>
                                         </flux:button>
-                                        <flux:button wire:click='hello'>
+                                        <flux:button type="submit">
                                             <flux:badge color="red">Supprimer</flux:badge>
                                         </flux:button>
                                     </div>

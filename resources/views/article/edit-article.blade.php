@@ -76,9 +76,7 @@
                         
                         @if (request()->is("dashboard/blogs/$id/edit"))
                             <input type="text" hidden id="text-editor_input" value="{!! $article['content'] !!}">
-                        @endif
-
-                        @if (request()->is("dashboard/blogs/$id/edit"))
+                    
                             <x-trix-input value="{!! $article['content'] !!}" class="text-zinc-600" id="text-editor"
                                 name="content" placeholder="Contenu de l'article ici..." required />
                             <x-partials.error error='content' />
