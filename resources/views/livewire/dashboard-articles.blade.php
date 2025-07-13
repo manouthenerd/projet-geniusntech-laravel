@@ -23,7 +23,7 @@
               <flux:input class="hover:cursor-pointer" icon="magnifying-glass" placeholder="Titre de l'article..."
                   wire:key="search" wire:model.live.debounce.250ms="search" />
 
-              <flux:button variant="primary" size="sm" href="blogs/create" icon="plus" wire:navigate />
+              <flux:button variant="primary" size="sm" href="blogs/create" icon="plus" />
           </div>
 
       </div>
@@ -41,7 +41,7 @@
                           <div class="flex flex-col justify-evenly p-2">
                               <h4 class="text-zinc-600">{{ $first_article->title }}</h4>
                               <div class="text-zinc-500">
-                                  <div class="h-[150px] overflow-hidden">{{ $first_article->content }}</div>
+                                  <div class="h-[150px] overflow-hidden">{!! $first_article->content !!}</div>
                                   <div class="text-xs text-zinc-600 space-y-4">
                                       <p class="ml-1">Author • 23 mars 2025</p>
                                       <div class="flex gap-4">

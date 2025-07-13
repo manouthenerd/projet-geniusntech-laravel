@@ -1,7 +1,7 @@
 @props(['id', 'name', 'value' => ''])
 
-<input type="text" hidden name="{{ $name }}" id="{{ $id }}_input"
-    value="{{ $value }}" />
+{{-- <input type="text" hidden name="{{ $name }}" id="{{ $id }}_input"
+    value="{{ $value }}" /> --}}
 
 <trix-toolbar class="[&_.trix-button]:bg-white bg-white [&_.trix-button.trix-active]:bg-gray-300"
     id="{{ $id }}_toolbar"></trix-toolbar>

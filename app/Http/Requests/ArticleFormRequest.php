@@ -24,7 +24,6 @@ class ArticleFormRequest extends FormRequest
         return [
             'title'     => ['required', 'string'],
             'category'  => ['required', 'string'],
-            'summary'   => ['required', 'string'],
             'content'   => ['required', 'string'],
             'image'     => ['sometimes', 'required', 'image', 'max:10240'],
         ];

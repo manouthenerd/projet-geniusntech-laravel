@@ -7,6 +7,7 @@ use App\Models\Upload;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ArticleFormRequest;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -77,7 +78,6 @@ class BlogController extends Controller
 
     public function store(ArticleFormRequest $request)
     {
-
         // Récuperer l'image contenu dans la requête
         $image_file = $request->file('image');
 
@@ -87,7 +87,7 @@ class BlogController extends Controller
         if ((bool) $image_path) {
 
             // Récupérer l'article et modifier les informations
-            Blog::createArticle($request->title, $request->summary, $request->category, $request->content, $image_path);
+            Blog::createArticle($request->title, $request->category, $request->content, $image_path);
         }
 
         return redirect('/dashboard/blogs');
