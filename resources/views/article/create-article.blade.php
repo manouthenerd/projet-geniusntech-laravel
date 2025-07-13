@@ -16,26 +16,27 @@
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
                             class="block mb-2 text-sm font-medium dark:text-white">Titre de l'article</label>
-                        <input name="title" value="{{old('title')}}" type="text" id="hs-feedback-post-comment-name-1"
+                        <input name="title" value="{{ old('title') }}" type="text"
+                            id="hs-feedback-post-comment-name-1"
                             class="border py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                             placeholder="Titre de l'article" required>
-                            <x-partials.error error="title"/>
+                        <x-partials.error error="title" />
                     </div>
 
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
                             class="block mb-2 text-sm font-medium dark:text-white">Préciser la catégorie de
                             l'article</label>
-                        <input name="category" value="{{old('category')}}" placeholder="Technologie, éducation, divertissement" type="text"
-                            id="category" required
+                        <input name="category" value="{{ old('category') }}"
+                            placeholder="Technologie, éducation, divertissement" type="text" id="category" required
                             class="border py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                        <x-partials.error error="category"/>
-                        </div>
+                        <x-partials.error error="category" />
+                    </div>
 
                     <div>
                         <flux:input id="upload-input" name='image' type="file"
                             label="Sélectionner l'image d'illustration" required />
-                        <x-partials.error error="image"/>
+                        <x-partials.error error="image" />
                     </div>
 
                     <div class="h-[300px] object-cover border border-zinc-100 rounded grid place-content-center p-4">
@@ -52,15 +53,12 @@
                         <label for="editor" class="block mb-2 text-sm font-medium dark:text-white">
                             Rédaction de l'article
                         </label>
-                        <input type="hidden" id="text-editor_input" name="content" value="{{ old('content') }}">
-                        <x-trix-input
-                            id="text-editor"
-                            name="content"
-                            value="{{ old('content') }}"
-                            required
-                            placeholder="Contenu de l'article ici..."
-                        />
-                        <x-partials.error error="content"/>
+                        <input type="hidden" id="text-editor_input" name="content">
+                        <x-trix-input 
+                            id="text-editor" 
+                            name="content" required
+                            placeholder="Contenu de l'article ici..." />
+                        <x-partials.error error="content" />
                     </div>
 
                     <div class="mt-6 grid">

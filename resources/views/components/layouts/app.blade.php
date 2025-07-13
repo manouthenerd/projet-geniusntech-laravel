@@ -2,7 +2,6 @@
 @fluxScripts
 <x-rich-text::styles theme="richtextlaravel" />
 
-<x-partials.page-loader/>
 
 <body class="overflow-x-hidden">
 

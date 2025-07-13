@@ -1,4 +1,3 @@
-import "../js/loader.js";
 
 const upload = document.querySelector("#upload-input");
 

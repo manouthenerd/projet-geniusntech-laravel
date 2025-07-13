@@ -5,7 +5,6 @@
 
     <x-rich-text::styles />
 
-    <x-partials.page-loader/>
 
     <body class="h-full bg-white dark:bg-zinc-800">
         <x-partials.dashboard-header />

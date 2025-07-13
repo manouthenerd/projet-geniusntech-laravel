@@ -2,68 +2,6 @@
 
     @vite(['resources/js/dashboard.js', 'resources/css/dashboard.css'])
 
-    <style>
-        .hide-loader {
-            transition: all 1.2s;
-            transform: translateY(120%);
-        }
-
-        #loader {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 10px;
-            height: 100vh;
-            width: 100%;
-            position: fixed;
-            left: 0;
-            top: 0;
-            inset: 0;
-            z-index: 1000 !important;
-            font-family: "Nunito";
-            font-weight: bold;
-        }
-
-        #circle {
-            height: 50px;
-            width: 50px;
-            border: 2px solid white;
-            border-top: transparent;
-            border-bottom: transparent;
-            border-left-color: #00669a;
-            border-radius: 50px;
-        }
-
-        #circle-box,
-        #loader p {
-            animation: fadeIn 1.2s ease alternate-reverse infinite;
-            transition: all 1.5s ease;
-        }
-
-        #loader p:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        #circle-box {
-            animation-delay: 0.2s;
-        }
-
-
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10%);
-            }
-
-            to {
-                opacity: 100;
-                transform: translateY(0);
-            }
-
-        }
-    </style>
-
     <flux:sidebar.toggle id="open-menu-button" class="min-[700px]:hidden cursor-pointer" icon="bars-2" inset="left" />
 
     <flux:brand href="{{ route('home') }}" logo="/images/logo-genius.png" name=""
@@ -99,8 +37,8 @@
 
     <flux:dropdown position="top" align="start">
         <flux:profile avatar="/images/big-logo.png" />
-        <flux:menu>
-            <flux:menu.item icon="arrow-right-start-on-rectangle">Déconnexion</flux:menu.item>
+        <flux:menu x-on:click="$refresh">
+            <flux:menu.item icon="arrow-right-start-on-rectangle" id="logout">Déconnexion</flux:menu.item>
         </flux:menu>
     </flux:dropdown>
 </flux:header>

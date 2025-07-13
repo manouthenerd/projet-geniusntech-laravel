@@ -1,7 +1,6 @@
 import "./libs/trix";
 import "../css/app.css";
 import "../css/home.css";
-import "../js/loader.js";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

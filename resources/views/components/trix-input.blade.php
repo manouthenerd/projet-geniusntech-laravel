@@ -1,6 +1,6 @@
 @props(['id', 'name', 'value' => ''])
 
-<input type="text" wire:model='content' hidden name="{{ $name }}" id="{{ $id }}_input"
+<input type="text" hidden name="{{ $name }}" id="{{ $id }}_input"
     value="{{ $value }}" />
 
 <trix-toolbar class="[&_.trix-button]:bg-white bg-white [&_.trix-button.trix-active]:bg-gray-300"

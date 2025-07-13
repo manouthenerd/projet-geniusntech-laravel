@@ -1,7 +1,5 @@
 <x-partials.header title="Connexion"/>
 
-<x-partials.page-loader/>
-
 <body>
 
     <main class="space-y-4 overflow-hidden h-screen w-full bg-slate-50">
