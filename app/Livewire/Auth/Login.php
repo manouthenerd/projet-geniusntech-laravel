@@ -24,7 +24,7 @@ class Login extends Component
         $password = $validated_credentials['password'];
 
         if(! User::authenticate($email, $password)) {
-            return back()->withErros(['credentials' => "Email ou mot de passe incorrect"]);
+            return back()->withErrors(['credentials' => "Email ou mot de passe incorrect"]);
         }
 
         return redirect()->intended(route('dashboard'));

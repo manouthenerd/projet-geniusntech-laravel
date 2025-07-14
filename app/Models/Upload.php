@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,8 +16,8 @@ class Upload extends Model
 
         $image_size_in_mb = round($file_size_in_kb, 2);
 
-        if($image_size_in_mb > 5) {
-            return redirect()->back()->with('file_error', "La taille de l'image doit être ≤ 10Mo");
+        if($image_size_in_mb > 10) {
+            return false;
         }
 
         // Créer un Hash pour le nom du fichier

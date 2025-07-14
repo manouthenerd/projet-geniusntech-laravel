@@ -7,7 +7,7 @@
 
             <div>
                 <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                    src="{{ $service['image'] }}" />
+                    src="{{ asset($service['image']) }}" />
             </div>
 
             <div class="text-white flex flex-col justify-around">

@@ -21,39 +21,7 @@
                 <img class="rounded" src="{{ $service['image'] }}" alt="image d'illustration">
             </div>
             <div class="space-y-4">
-                {{-- Afficher le contenu réel --}}
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate voluptatem earum quis eveniet
-                    consectetur eos, accusamus sapiente delectus reprehenderit tempore non corporis a doloremque odit
-                    hic
-                    magni vitae cumque laudantium pariatur nulla est vel ipsum! Alias ullam ab ea neque? Consequatur
-                    iusto
-                    tempora veniam fugiat! Dignissimos laborum doloribus illum asperiores.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto sint illo facere
-                    consequuntur
-                    rem nesciunt! Omnis beatae nulla consequuntur porro, corporis officiis itaque labore exercitationem
-                    impedit vel voluptatem voluptate saepe, illo ut a voluptatibus odit rerum ratione aperiam quas
-                    accusamus. Dicta quaerat assumenda eligendi expedita aspernatur repellat error cupiditate!
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto sint illo facere
-                    consequuntur
-                    rem nesciunt! Omnis beatae nulla consequuntur porro, corporis officiis itaque labore exercitationem
-                    impedit vel voluptatem voluptate saepe, illo ut a voluptatibus odit rerum ratione aperiam quas
-                    accusamus. Dicta quaerat assumenda eligendi expedita aspernatur repellat error cupiditate!
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto sint illo facere
-                    consequuntur
-                    rem nesciunt! Omnis beatae nulla consequuntur porro, corporis officiis itaque labore exercitationem
-                    impedit vel voluptatem voluptate saepe, illo ut a voluptatibus odit rerum ratione aperiam quas
-                    accusamus. Dicta quaerat assumenda eligendi expedita aspernatur repellat error cupiditate!
-                </p>
+                {!! $service['description'] !!}
             </div>
         </div>
 

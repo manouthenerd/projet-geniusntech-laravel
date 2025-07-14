@@ -22,7 +22,7 @@ class BlogController extends Controller
         $first_article = Blog::first()->first(['id', 'title', 'summary', 'content', 'image']);
 
         $articles = Blog::where('id', '<>', $first_article->id)->get(['id', 'title', 'summary', 'content', 'image']);
-        
+
         return view('dashboard.blogs', ['articles' => $articles, 'first_article' => $first_article]);
     }
 
@@ -56,6 +56,10 @@ class BlogController extends Controller
             // Enregistrer l'image après traitement ou déclencher une erreur
             $image_path = Upload::store($image_file, 'articles');
 
+            if (! (bool) $image_path) {
+                return back()->withErrors(['image' => "La taille de l'image doit être ≤ 10Mo"]);
+            }
+
             if ((bool) $image_path) {
 
                 // Récupérer l'article et modifier les informations
@@ -67,13 +71,11 @@ class BlogController extends Controller
             }
 
             return redirect()->back()->with(['success_message' => "Article modifié avec succès !✅"]);
-
         } else {
             $updated_article = Blog::editArticle($blog->id, $request->title, $request->summary, $request->category, $request->content, $blog->image);
 
             return redirect()->back()->with(['success_message' => "Article modifié avec succès !✅"]);
         }
-
     }
 
     public function store(ArticleFormRequest $request)
@@ -84,6 +86,10 @@ class BlogController extends Controller
         // Enregistrer l'image après traitement ou déclencher une erreur
         $image_path = Upload::store($image_file, 'articles');
 
+        if (! (bool) $image_path) {
+            return back()->withErrors(['image' => "La taille de l'image doit être ≤ 10Mo"]);
+        }
+
         if ((bool) $image_path) {
 
             // Récupérer l'article et modifier les informations
@@ -93,9 +99,10 @@ class BlogController extends Controller
         return redirect('/dashboard/blogs');
     }
 
-    public function destroy(Blog $blog) {
-        
-        if(! (bool) $blog) {
+    public function destroy(Blog $blog)
+    {
+
+        if (! (bool) $blog) {
             return redirect()->back();
         }
 

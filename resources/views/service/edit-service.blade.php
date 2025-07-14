@@ -10,11 +10,17 @@
 
             <div
                 class="mt-5 p-4 relative z-10 bg-white border border-gray-200 rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
-                <form method="post" action="" class="p-2 space-y-4" enctype="multipart/form-data">
+                <form method="post" action="{{route('dashboard.show-service', ['service' => $service->id])}}" class="p-2 space-y-4" enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
-                            class="block mb-2 text-sm font-medium dark:text-white">Nom du service</label>
+                            class="block mb-2 text-sm font-medium dark:text-white">
+                            Nom du service
+                            @if (request()->is("dashboard/services/$service->id"))
+                                <x-ui.label-tag text="En lecture uniquement" />
+                            @endif
+                        </label>
                         <input @readonly(request()->is("dashboard/services/$service->id")) name="title" value="{{ $service->title }}" type="text"
                             id="hs-feedback-post-comment-name-1"
                             class="border py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -23,7 +29,12 @@
                     </div>
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
-                            class="block mb-2 text-sm font-medium dark:text-white">Phrase d'accroche</label>
+                            class="block mb-2 text-sm font-medium dark:text-white">
+                            Phrase d'accroche
+                            @if (request()->is("dashboard/services/$service->id"))
+                                <x-ui.label-tag text="En lecture uniquement" />
+                            @endif
+                        </label>
                         <input @readonly(request()->is("dashboard/services/$service->id")) name="summary" value="{{ $service->summary }}" type="text"
                             id="hs-feedback-post-comment-name-1"
                             class="border py-2.5 sm:py-3 px-4 block w-full border-slate-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
@@ -41,7 +52,7 @@
 
                     <div class="h-[300px] object-cover border border-zinc-100 rounded grid place-content-center p-4">
                         <flux:button id="close-button" class="hide-close-btn" icon="x-mark" variant="subtle" />
-                        <img src="{{ $service->image }}" id="image"
+                        <img src="{{asset( $service->image )}}" id="image"
                             class="rounded ring ring-white h-[200px] my-2">
                        
                     </div>
@@ -49,10 +60,13 @@
                     <div>
                         <label for="editor" class="block mb-2 text-sm font-medium dark:text-white">
                             Plus de détails sur le service
+                            @if (request()->is("dashboard/services/$service->id"))
+                                <x-ui.label-tag text="En lecture uniquement" />
+                            @endif
                         </label>
 
                         @if (request()->is("dashboard/services/$service->id/edit"))
-                            <input type="text" hidden id="text-editor_input" value="{!! $service->description !!}">
+                            <input type="text" name="description" hidden id="text-editor_input" value="{!! $service->description !!}">
 
                             <x-trix-input value="{!! $service->description !!}" class="text-zinc-600" id="text-editor"
                                 name="description" placeholder="Détails du service ici..." required />
