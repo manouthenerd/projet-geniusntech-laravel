@@ -48,13 +48,13 @@ class Blogs extends Component
         }
 
         // Récupère le premier article
-        $this->first_article = $query->first(['id', 'title', 'content', 'image']);
+        $this->first_article = $query->first(['id', 'title', 'content', 'image', 'created_at']);
 
         // Récupère les autres articles
         if ($this->first_article) {
             $this->articles = (clone $query)
                 ->where('id', '<>', $this->first_article->id)
-                ->get(['id', 'title', 'content', 'image']);
+                ->get(['id', 'title', 'content', 'image', 'created_at']);
 
         } else {
             $this->articles = collect();

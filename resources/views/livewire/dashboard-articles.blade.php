@@ -43,7 +43,7 @@
                               <div class="text-zinc-500">
                                   <div class="h-[150px] overflow-hidden">{!! $first_article->content !!}</div>
                                   <div class="text-xs text-zinc-600 space-y-4">
-                                      <p class="ml-1">Author • 23 mars 2025</p>
+                                      <p class="ml-1">Genius Admin • {{ \Carbon\Carbon::parse($first_article->created_at)->format('d-m-y') }}</p>
                                       <div class="flex gap-4">
                                           <flux:button wire:navigate size="sm" color="blue"
                                               href="/dashboard/blogs/{{ $first_article->id }}">
@@ -72,7 +72,7 @@
 
                       @foreach ($articles as $article)
                           <x-partials.blog-card id="{{ $article->id }}" title="{{ $article->title }}"
-                              image="{{ $article->image }}" date="23/06/2025" />
+                              image="{{ $article->image }}" date="{{ \Carbon\Carbon::parse($first_article->created_at)->format('d-m-y') }}" />
                       @endforeach
                   @endif
               </ul>

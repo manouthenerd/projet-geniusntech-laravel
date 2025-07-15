@@ -12,7 +12,7 @@
             <a wire:navigate href="{{ route('dashboard.show-blog', ['blog' => $id]) }}"
                 class="text-white hover:text-zinc-800 group-hover:text-black hover:underline transition-all">{{ $title }}</a>
             <div class="text-xs text-zinc-600 space-y-4">
-                <p class="ml-1 text-white group-hover:text-black font-bold">Admin • {{ $date }}</p>
+                <p class="ml-1 text-white group-hover:text-black font-bold">Genius Admin • {{ $date }}</p>
                 <div class="flex gap-4">
                     <flux:button wire:navigate size="sm" color="blue"
                         href="{{ route('dashboard.show-blog', ['blog' => $id]) }}">

@@ -51,7 +51,9 @@
                             <div class="text-zinc-500">
                                 <div class="h-[150px] overflow-hidden text-[#e2e2e2e3]">{!! $first_article->content !!}</div>
                                 <div class="text-xs text-white space-y-4">
-                                    <p class="ml-1 text-white font-bold">Publié le 23 mars 2025</p>
+                                    <p class="ml-1 text-white font-bold">
+                                        Publié le {{ \Carbon\Carbon::parse($first_article->created_at)->format('d-m-y') }}
+                                    </p>
                                     <div class="w-full">
                                         <flux:button wire:navigate size="sm" class="w-full" color="blue"
                                             href="blogs/{{ $first_article->id }}">
@@ -78,8 +80,9 @@
                                 <a wire:navigate href="{{ route('blog', ['blog' => $article->id]) }}"
                                     class="text-white hover:text-zinc-800 group-hover:text-black hover:underline transition-all">{{ $article->title }}</a>
                                 <div class="text-xs text-zinc-600 space-y-4">
-                                    <p class="ml-1 text-white group-hover:text-black font-bold">Publié le
-                                        23.03.2025</p>
+                                    <p class="ml-1 text-white group-hover:text-black font-bold">
+                                        Publié le {{ \Carbon\Carbon::parse($article->created_at)->format('d-m-y') }}
+                                    </p>
                                     <div class="text-xs text-zinc-600 space-y-4">
                                         <div>
                                             <flux:button size="sm"
