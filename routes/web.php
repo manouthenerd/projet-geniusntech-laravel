@@ -24,7 +24,7 @@ Route::get("/blogs/{blog}", [BlogController::class, 'show'])->name('blog');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-Route::get('/login', Login::class)->name('login');
+Route::get('/login', Login::class)->name('login')->middleware('guest');
 
 Route::view('/a-propos', 'about')->name('about');
 

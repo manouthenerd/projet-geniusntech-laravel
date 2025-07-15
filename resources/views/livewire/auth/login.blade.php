@@ -37,7 +37,7 @@
 
                 <x-partials.error error="password" />
                 @error('credentials')
-                    <p class="text-xs text-red-500 font-medium">{{$message}}</p>
+                    <x-partials.error error="credentials" />
                 @enderror
 
             </div>
