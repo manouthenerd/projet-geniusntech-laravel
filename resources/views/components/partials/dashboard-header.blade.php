@@ -15,17 +15,17 @@
             Accueil
         </flux:navbar.item>
 
-        <flux:navbar.item icon="globe-alt" badge="12" href="{{ route('dashboard.blogs') }}"
+        <flux:navbar.item icon="globe-alt" badge="{{$global_blog_counter}}" href="{{ route('dashboard.blogs') }}"
             :current="request()->is('dashboard/blogs')">
             Blogs
         </flux:navbar.item>
 
-        <flux:navbar.item icon="newspaper" badge="08" href="{{ route('dashboard.services') }}"
+        <flux:navbar.item icon="newspaper" badge="{{$global_service_counter}}" href="{{ route('dashboard.services') }}"
             :current="request()->is('dashboard/services')">
             Services
         </flux:navbar.item>
 
-        <flux:navbar.item icon="user-group" href="{{ route('dashboard.achievement') }}"
+        <flux:navbar.item icon="user-group" badge="0" href="{{ route('dashboard.achievement') }}"
             :current="request()->is('dashboard/achievements')">
             Projets
         </flux:navbar.item>

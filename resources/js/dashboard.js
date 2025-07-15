@@ -7,6 +7,19 @@ const toHidden = document.querySelector("#to-hidden");
 
 const removeImageButton = document.querySelector("#close-button");
 
+const sideBarMenuButton = document.querySelector("#open-menu-button")
+const sidebarCloseButton = document.querySelector("#close-menu-button")
+
+const sidebar = document.querySelector("#sidebar")
+
+sideBarMenuButton.addEventListener('click', () => {
+    sidebar.classList.toggle("left-[-257px]")
+})
+
+sidebarCloseButton.addEventListener('click', () => {
+    sidebar.classList.add('left-[-257px]')
+})
+
 // Charger l'image pour un aperçu
 upload.addEventListener("change", (e) => {
     showFile(e.target);
