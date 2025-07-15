@@ -37,8 +37,9 @@
 
     <flux:dropdown position="top" align="start">
         <flux:profile avatar="/images/big-logo.png" />
-        <flux:menu x-on:click="$refresh">
-            <flux:menu.item icon="arrow-right-start-on-rectangle" id="logout">Déconnexion</flux:menu.item>
+        <flux:menu>
+            <livewire:header-logout-button></livewire:header-logout-button>
+            {{-- <flux:menu.item icon="arrow-right-start-on-rectangle" id="logout">Déconnexion</flux:menu.item> --}}
         </flux:menu>
     </flux:dropdown>
 </flux:header>

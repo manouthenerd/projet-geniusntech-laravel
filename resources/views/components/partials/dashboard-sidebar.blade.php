@@ -1,5 +1,5 @@
 <div id="sidebar" class="close-sidebar px-2 grid h-full w-[256px] shadow shadow-slate-100 fixed bg-slate-200 z-[999] left-[-257px]
-  left-0">     
+  left-0">  {{--Ne pas toucher la répétition de la classe left, elle sert à dynamiser l'affichage du menu latéral --}}    
          <div class="grid w-full">
             <flux:button id="close-menu-button" icon="x-mark" variant="ghost" class="cursor-pointer justify-self-end" />
                 <a href="{{route('home')}}" wire:navigate>
@@ -31,10 +31,6 @@
         </flux:navbar>
         <flux:spacer />
 
-        <div id="logout-button" class="justify-self-center">
-            <flux:button type="submit" variant="ghost"  class="text-red-600 hover:cursor-pointer">
-                <span class="text-red-700 font-medium">Se déconnecter</span>
-            </flux:button>
-        </div>
+        <livewire:logout-button></livewire:logout-button>
 
 </div>

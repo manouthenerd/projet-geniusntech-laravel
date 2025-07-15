@@ -1,0 +1,1 @@
+<flux:menu.item wire:click='logout' icon="arrow-right-start-on-rectangle" id="logout">Déconnexion</flux:menu.item>
