@@ -1,6 +1,9 @@
 <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
 
-    @vite(['resources/js/dashboard.js', 'resources/css/dashboard.css'])
+    <link rel="stylesheet" href="/build/assets/app-BnuZD_Zm.css">
+    <link rel="stylesheet" href="/build/assets/app-mXYO2--w.css">
+    <link rel="stylesheet" href="/build/assets/dashboard-UPM9r2KA.css">
+    <script src="/build/assets/dashboard-B9zqp7dT.js" defer></script>
 
     <flux:sidebar.toggle id="open-menu-button" class="min-[700px]:hidden cursor-pointer" icon="bars-2" inset="left" />
 
@@ -15,13 +18,13 @@
             Accueil
         </flux:navbar.item>
 
-        <flux:navbar.item icon="globe-alt" badge="{{$global_blog_counter}}" href="{{ route('dashboard.blogs') }}"
+        <flux:navbar.item icon="globe-alt" badge="{{ $global_blog_counter }}" href="{{ route('dashboard.blogs') }}"
             :current="request()->is('dashboard/blogs')">
             Blogs
         </flux:navbar.item>
 
-        <flux:navbar.item icon="newspaper" badge="{{$global_service_counter}}" href="{{ route('dashboard.services') }}"
-            :current="request()->is('dashboard/services')">
+        <flux:navbar.item icon="newspaper" badge="{{ $global_service_counter }}"
+            href="{{ route('dashboard.services') }}" :current="request()->is('dashboard/services')">
             Services
         </flux:navbar.item>
 
@@ -39,7 +42,6 @@
         <flux:profile avatar="/images/big-logo.png" />
         <flux:menu>
             <livewire:header-logout-button></livewire:header-logout-button>
-            {{-- <flux:menu.item icon="arrow-right-start-on-rectangle" id="logout">Déconnexion</flux:menu.item> --}}
         </flux:menu>
     </flux:dropdown>
 </flux:header>
