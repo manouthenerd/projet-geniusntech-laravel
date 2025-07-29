@@ -7,6 +7,7 @@ use App\Livewire\DashboardServices;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
+    
     Route::get('dashboard', function () {
         return view('dashboard.home');
     })->name('dashboard');

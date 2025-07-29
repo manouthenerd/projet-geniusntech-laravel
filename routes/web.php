@@ -28,4 +28,5 @@ Route::get('/login', Login::class)->name('login')->middleware('guest');
 
 Route::view('/a-propos', 'about')->name('about');
 
+
 require_once "dashboard.php";
