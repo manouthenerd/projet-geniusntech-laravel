@@ -17,7 +17,7 @@
                  <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500">
                      <button
                          class="bg-black text-white font-bold border border-black ring-1 ring-black ring-offset-2 rounded p-2 text-center">
-                        <a href="{{route("contact")}}" wire:navigate>
+                        <a href="{{route("contact")}}">
                             Une idée de projet ? <span class="animate-pulse">📝</span>
                         </a>
                      </button>
@@ -69,7 +69,7 @@
                         
                     
                      <a href="services/{{$service['identifier']}}" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="1000"
-                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto" wire:navigate>
+                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto" >
                          <div>
                              <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
                                  src="{{$service['image']}}" />

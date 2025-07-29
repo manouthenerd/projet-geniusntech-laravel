@@ -7,6 +7,16 @@ import "aos/dist/aos.css";
 
 import "preline";
 
+import.meta.glob([
+
+  '../images/**',
+
+  '../storage/**',
+
+  '../fonts/**',
+
+]);
+
 AOS.init({
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
     startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on

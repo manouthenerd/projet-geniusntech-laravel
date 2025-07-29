@@ -44,7 +44,7 @@
                         class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-[#00669A] blog">
                         <div>
                             <img style="height: 300px;width: 100%;object-fit: cover;" class="rounded"
-                                src="{{ asset($first_article->image) }}" alt="{{ $first_article->title }}">
+                                src="storage/{{$first_article->image }}" alt="{{ $first_article->title }}">
                         </div>
                         <div class="flex flex-col justify-evenly p-2">
                             <h4 class="text-white font-bold underline">{{ $first_article->title }}</h4>
@@ -74,7 +74,7 @@
                         <div class="space-y-4 h-full flex flex-col justify-between">
                             <div class="overflow-hidden">
                                 <img class="overflow-hidde object-cover h-[203px] w-full rounded"
-                                    src="{{ asset($article->image) }}" alt="{{ $article->title }}">
+                                    src="storage/{{$article->image}}" alt="{{ $article->title }}">
                             </div>
                             <div class="flex flex-col justify-evenly p-2 space-y-2">
                                 <a wire:navigate href="{{ route('blog', ['blog' => $article->id]) }}"

@@ -15,6 +15,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard.home');
     })->name('dashboard.achievement');
 
+
     Route::get('dashboard/services', DashboardServices::class)->name('dashboard.services');
     Route::post('dashboard/services', [ServiceController::class, 'store'])->name('dashboard.services');
     Route::get('dashboard/services/create', [ServiceController::class, 'create'])->name('dashboard.create-service');

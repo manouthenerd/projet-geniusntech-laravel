@@ -12,20 +12,20 @@
             </a>
 
             <div id="mainLinks" class="flex gap-2 text-sm space-x-2 items-center max-[960px]:hidden">
-                <a @class(['text-[#025686] font-bold' => request()->is('/')]) class="font-bold" href="/" wire:navigate>Accueil</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('services')]) class="hover:text-[#025686]" href="/services" wire:navigate>Services</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('blogs')]) class="hover:text-[#025686]" href="/blogs" wire:navigate>Blogs</a>
-                <a @class([
+                <a @class(['text-[#025686] font-bold' => request()->is('/')]) class="font-bold" href="/">Accueil</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('services')]) class="hover:text-[#025686]" href="/services">Services</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('blogs')]) class="hover:text-[#025686]" href="/blogs">Blogs</a>
+                {{-- <a @class([
                     'text-[#025686] font-bold' => request()->is('nos-realisations'),
-                ]) class="hover:text-[#025686]" href="/nos-realisations" wire:navigate>Nos
-                    réalisations</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('a-propos')]) class="hover:text-[#025686]" href="/a-propos" wire:navigate>À propos</a>
+                ]) class="hover:text-[#025686]" href="/nos-realisations">Nos
+                    réalisations</a> --}}
+                <a @class(['text-[#025686] font-bold' => request()->is('a-propos')]) class="hover:text-[#025686]" href="/a-propos">À propos</a>
                 <a @class(['text-[#025686] font-bold' => request()->is('contact')]) class="hover:text-[#025686]" href="/contact"
-                    wire:navigate>Contactez-nous</a>
+                >Contactez-nous</a>
             </div>
 
             <div class="max-[960px]:hidden text-sm">
-                <a @class(['text-[#025686] font-bold' => request()->is('espace')]) href="/login" wire:navigate>Espace admin</a>
+                <a @class(['text-[#025686] font-bold' => request()->is('espace')]) href="/login">Espace admin</a>
             </div>
 
             <livewire:menu-button />
@@ -35,14 +35,15 @@
 
     <main @class(['bg-neutral-50' => request()->is('services/*')]) class="space-y-4">
         <div id="mobile-navbar"
-            class="fixed z-[1] transition-all w-[85%] h-[202px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm top-[80px]">
+            class="fixed z-[1] transition-all w-[85%] h-[230px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm top-[80px]">
             <div class="grid gap-2 space-x-2 p-2 items-center">
                 <a class="text-[#fff] font-bold" href="{{ route('home') }}">Accueil</a>
                 <a class="hover:text-white" href="{{ route('services') }}">Services</a>
                 <a class="hover:text-white" href="{{ route('blogs') }}">Blogs</a>
-                <a class="hover:text-white" href="{{ route('achievements') }}">Nos réalisations</a>
+                {{-- <a class="hover:text-white" href="{{ route('achievements') }}">Nos réalisations</a> --}}
                 <a class="hover:text-white" href="{{ route('about') }}">À propos</a>
                 <a class="hover:text-white" href="{{ route('contact') }}">Contactez-nous</a>
+                <a class="hover:text-white" href="{{ route('login') }}">Espace admin</a>
             </div>
         </div>
 
