@@ -45,50 +45,7 @@
 
             <!-- Formulaire de contact -->
 
-            <div>
-                <form action="/test" method="post" class="p-2 space-y-4">
-                    @csrf
-                    <div class="grid grid-cols-2 gap-2" data-aos="fade-up" data-aos-duration="1000"
-                        data-aos-delay="1200">
-                        <flux:field>
-                            <flux:label>Nom<span class="text-red-500">*</span></flux:label>
-                            <flux:input type="text" placeholder="Entrer votre nom..." />
-                        </flux:field>
-
-                        <flux:field>
-                            <flux:label>Prénoms<span class="text-red-500">*</span></flux:label>
-                            <flux:input type="text" placeholder="Entrer votre prénom..." />
-                        </flux:field>
-                    </div>
-
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600">
-                        <flux:field>
-                            <flux:label>Téléphone<span class="text-red-500">*</span></flux:label>
-                            <flux:input type="tel" placeholder="+2250102030405" />
-                        </flux:field>
-                    </div>
-
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600">
-                        <flux:field>
-                            <flux:label>Adresse email<span class="text-red-500">*</span></flux:label>
-                            <flux:input type="email" placeholder="exemple@gmail.com" />
-                        </flux:field>
-                    </div>
-
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600">
-                        <flux:field>
-                            <flux:label>Votre message<span class="text-red-500">*</span></flux:label>
-                            <flux:textarea placeholder="Exprimer vos idées ici..." />
-                        </flux:field>
-                    </div>
-
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600">
-                        <flux:button class="w-full bg-[#0f2658]! text-white! hover:opacity-80 transition-opacity">
-                            Envoyer</flux:button>
-                    </div>
-
-                </form>
-            </div>
+            <livewire:contact-form />
         </div>
     </section>
 

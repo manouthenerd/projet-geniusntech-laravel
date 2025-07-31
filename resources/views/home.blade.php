@@ -14,7 +14,7 @@
                      protéger vos biens, vos données et vos équipes, en toute fiabilité.
                  </p>
 
-                 <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500">
+                 <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500" class="ml-0.5">
                      <button
                          class="bg-black text-white font-bold border border-black ring-1 ring-black ring-offset-2 rounded p-2 text-center">
                         <a href="{{route("contact")}}">
@@ -29,10 +29,10 @@
      <section class="p-2">
 
          <div class="grid min-[845px]:grid-cols-2 gap-2 p-2">
-             <div data-aos="fade-right" data-aos-duration="1200" class="space-y-2 bg-black rounded">
+             <div data-aos="fade-right" data-aos-duration="1200" class="space-y-2 bg-[#036a9c]">
                  <h2 class="text-xl font-semibold text-slate-400 bg-white">Qui sommes-nous ?</h2>
 
-                 <ul class="space-y-4 p-2 text-white rounded">
+                 <ul class="space-y-4 p-2 text-white bg-[#036a9c]">
                      <li>
                          GENIUS est une entreprise spécialisée dans le domaine de la télécommunication, la
                          radiocommunication, sécurité électronique, domotique, informatique, bâtiment et travaux public,
@@ -50,7 +50,7 @@
 
              <div data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1000">
                  <h2 class="text-xl font-semibold  text-slate-400">💡</h2>
-                 <div class="border rounded shadow shadow-slate-100">
+                 <div class="border shadow shadow-slate-100">
                      <img src="/images/img.jpg" alt="fibre optique">
                  </div>
              </div>
@@ -59,7 +59,7 @@
          <div class="space-y-4 p-2 mt-4 bg-[#8080800d]">
              <div class="flex justify-between flex-wrap items-center max-[406px]:space-y-4">
                  <h2 class="text-xl font-semibold text-slate-400">Nos domaines d'expertises🛠️</h2>
-                 <a href="/services" class="text-[#068fcf] font-bold rounded text-center max-[600px]:text-[13px]">
+                 <a href="/services" class=" text-[#018bcd] font-bold rounded text-center max-[600px]:text-[13px]">
                      Découvrir tous nos services
                  </a>
              </div>
@@ -92,10 +92,10 @@
              <h2 class="text-xl font-semibold text-slate-400">Ce qu'ils disent de nous📜</h2>
              <div class="w-full">
                  <ul
-                     class="grid min-[650px]:grid-cols-2 items-baseline justify-between rounded w-full space-y-4 space-x-4 bg-[#0A103E] p-2">
+                     class="grid min-[650px]:grid-cols-2 items-baseline justify-between rounded w-full space-y-4 space-x-4 bg-transparent p-2">
 
                      <li data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="1000"
-                         class="rounded space-y-2 shadow shadow-[#000] border border-slate-300 bg-transparent backdrop-blur-lg text-white p-2 ">
+                         class="rounded space-y-2 mt-2.5 bg-[#0A103E] shadow shadow-[#000] backdrop-blur-lg text-white p-2 ">
                          <div class="flex space-x-2">
                              <p>
                                  <img class="size-[45px] rounded-full" src="/images/profile.jpeg" />
@@ -112,7 +112,7 @@
                      </li>
 
                      <li data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="1200"
-                         class="rounded space-y-2 shadow shadow-[#000] border border-slate-300 bg-transparent backdrop-blur-lg text-white p-2 ">
+                         class="rounded space-y-2 mt-2.5 shadow shadow-[#000] bg-[#0A103E] backdrop-blur-lg text-white p-2 ">
                          <div class="flex space-x-2">
                              <p>
                                  <img class="size-[45px] rounded-full" src="/images/girl.jpeg" />
@@ -167,27 +167,5 @@
              </div>
          </div>
 
-         {{-- <div class="space-y-4 p-2 mt-4">
-            <h2 class="text-xl font-semibold text-slate-400">
-                Nos actualités d'ici
-            </h2>
-
-            <div class="w-full">
-                <ul class="flex gap-2 items-center">
-                    <li class="p-1 rounded border border-neutral-100 w-[250px] shadow shadow-neutral-200">
-
-                        <p class="text-[#0d2555] font-medium">La 5g</p>
-                        <p>
-                            <img width="250" height="250" src="/images/electricity.png" class="rounded-sm" alt="électricien en action">
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, mollitia ea esse
-                            eveniet
-                            provident voluptatum consectetur incidunt laborum rem corporis.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div> --}}
      </section>
  </x-layouts.app>

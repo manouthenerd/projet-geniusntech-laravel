@@ -37,13 +37,13 @@
         <div id="mobile-navbar"
             class="fixed z-[1] transition-all w-[85%] h-[230px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm top-[80px]">
             <div class="grid gap-2 space-x-2 p-2 items-center">
-                <a class="text-[#fff] font-bold" href="{{ route('home') }}">Accueil</a>
-                <a class="hover:text-white" href="{{ route('services') }}">Services</a>
-                <a class="hover:text-white" href="{{ route('blogs') }}">Blogs</a>
+                <a class="{{ request()->routeIs('home') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('home') }}">Accueil</a>
+                <a class="{{ request()->routeIs('services') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('services') }}">Services</a>
+                <a class="{{ request()->routeIs('blogs') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('blogs') }}">Blogs</a>
                 {{-- <a class="hover:text-white" href="{{ route('achievements') }}">Nos réalisations</a> --}}
-                <a class="hover:text-white" href="{{ route('about') }}">À propos</a>
-                <a class="hover:text-white" href="{{ route('contact') }}">Contactez-nous</a>
-                <a class="hover:text-white" href="{{ route('login') }}">Espace admin</a>
+                <a class="{{ request()->routeIs('about') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('about') }}">À propos</a>
+                <a class="{{ request()->routeIs('contact') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('contact') }}">Contactez-nous</a>
+                <a class="{{ request()->routeIs('login') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('login') }}">Espace admin</a>
             </div>
         </div>
 

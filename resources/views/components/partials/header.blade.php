@@ -10,9 +10,8 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
 
-    <link rel="stylesheet" href="/build/assets/app-BnuZD_Zm.css">
-    <link rel="stylesheet" href="/build/assets/app-mXYO2--w.css">
-    <link rel="stylesheet" href="/build/assets/dashboard-UPM9r2KA.css">
-    <script src="/build/assets/app-DMgqyZ_s.js" defer></script>
+    <link rel="stylesheet" href="/build/css/app2.css">
+    <link rel="stylesheet" href="/build/css/home.css">
+    <script src="/build/js/app2.js" defer></script>
 
 </head>

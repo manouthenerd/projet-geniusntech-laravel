@@ -20,4 +20,13 @@ export default defineConfig({
     server: {
         cors: true,
     },
+    build: {
+        rollupOptions: {
+            output: {
+                entryFileNames: 'js/[name].js',
+                chunkFileNames: 'js/[name].js',
+                assetFileNames: 'css/[name].[ext]'
+            }
+        }
+    }
 });

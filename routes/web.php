@@ -23,6 +23,8 @@ Route::get("/blogs/{blog}", [BlogController::class, 'show'])->name('blog');
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 
 Route::get('/login', Login::class)->name('login')->middleware('guest');
 

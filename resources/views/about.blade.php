@@ -13,7 +13,7 @@
 
     <section class="rounded shadow overflow-hidden shadow-slate-100 min-[730px]:mx-18 max-[730px]:mx-4 space-y-2">
         <div data-aos="fade-down" data-aos-duration="1000"
-            class="bg-gradient-to-tr from-slate-50 via-blue-200 to-amber-50 text-black shadow shadow-slate-300 p-2 rounded space-y-2">
+            class="bg-gradient-to-tr from-slate-50 via-blue-200 to-amber-50 text-black shadow shadow-slate-300 p-2 rounded space-y-2 mt-2.5">
             <p class="text-slate-600">
                 <span class="font-bold text-[#00689e]">Genius Network Technology</span> est une entreprise spécialisée
                 dans le domaine de la <span class="text-[#00689e]"> télécommunication, la radiocommunication,
@@ -183,9 +183,6 @@
                         </li>
                         <li>
                             La sécurisation des données, des personnes et des biens
-                        </li>
-                        <li>
-                            L’interopérabilité entre vos différents systèmes d’informations
                         </li>
                         <li>
                             La productivité de vos actions et initiatives quotidiennes relatives à l’atteinte de vos

@@ -1,9 +1,8 @@
 <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
 
-    <link rel="stylesheet" href="/build/assets/app-BnuZD_Zm.css">
-    <link rel="stylesheet" href="/build/assets/app-mXYO2--w.css">
-    <link rel="stylesheet" href="/build/assets/dashboard-UPM9r2KA.css">
-    <script src="/build/assets/dashboard-B9zqp7dT.js" defer></script>
+    <link rel="stylesheet" href="/build/css/app2.css">
+    <link rel="stylesheet" href="/build/css/dashboard.css">
+    <script src="/build/js/dashboard2.js" defer></script>
 
     <flux:sidebar.toggle id="open-menu-button" class="min-[700px]:hidden cursor-pointer" icon="bars-2" inset="left" />
 
