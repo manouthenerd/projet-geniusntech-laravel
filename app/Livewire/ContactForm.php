@@ -57,7 +57,7 @@ class ContactForm extends Component
 
     public function submit()
     {
-        $this->validate();
+        $this->validate($this->rules, $this->messages, $this->attributes());
         
         // Réinitialiser les messages
         $this->errorMessage = '';
@@ -87,7 +87,7 @@ class ContactForm extends Component
             
         } catch (\Exception $e) {
             // En cas d'erreur, on garde les données du formulaire
-            $this->errorMessage = 'Erreur lors de l\'envoi du message. Veuillez réessayer.';
+            $this->errorMessage = "Erreur lors de l'envoi du message. Veuillez réessayer. \n " . $e->getMessage();
         }
     }
 

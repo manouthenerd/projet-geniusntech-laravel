@@ -5,7 +5,7 @@
 
 <body class="overflow-x-hidden">
 
-    <header class="w-full z-[999] min-h-10 p-2 bg-transparent backdrop-blur-lg font-thin sticky top-0">
+    <header class="w-full z-[999] min-h-10 p-2 bg-white font-thin sticky top-0">
         <nav class="flex justify-around max-[960px]:justify-between max-[960px]:px-8 items-center">
             <a href="/">
                 <img src="/images/logo-genius.png" width="170" height="55" />

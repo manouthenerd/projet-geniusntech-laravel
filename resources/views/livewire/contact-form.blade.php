@@ -15,20 +15,22 @@
 
     <form wire:submit.prevent="submit" class="p-2 space-y-4">
         @csrf
-        <div class="grid grid-cols-2 gap-2">
+        <div class="grid gap-2">
             <flux:field>
                 <flux:label>Nom<span class="text-red-500">*</span></flux:label>
                 <flux:input wire:model="name" type="text" placeholder="Entrer votre nom..." />
                 @error("name")
-                    <p class="text-red-500 text-xs font-bold mt-2">{{ $message }}</p>
+                    <p class="text-red-500 text-xs font-bold mt-1">{{ $message }}</p>
                 @enderror
             </flux:field>
+        </div>
 
+        <div class="grid gap-2">
             <flux:field>
                 <flux:label>Prénoms<span class="text-red-500">*</span></flux:label>
                 <flux:input wire:model="surname" type="text" placeholder="Entrer votre prénom..." />
                 @error("surname")
-                    <p class="text-red-500 text-xs font-bold mt-2">{{ $message }}</p>
+                    <p class="text-red-500 text-xs font-bold mt-1">{{ $message }}</p>
                 @enderror
             </flux:field>
         </div>
@@ -38,7 +40,7 @@
                 <flux:label>Téléphone<span class="text-red-500">*</span></flux:label>
                 <flux:input wire:model="phone" type="tel" placeholder="+2250102030405" />
                 @error("phone")
-                    <p class="text-red-500 text-xs font-bold mt-2">{{ $message }}</p>
+                    <p class="text-red-500 text-xs font-bold mt-1">{{ $message }}</p>
                 @enderror
             </flux:field>
         </div>
@@ -48,7 +50,7 @@
                 <flux:label>Adresse email<span class="text-red-500">*</span></flux:label>
                 <flux:input wire:model="email" type="email" placeholder="exemple@gmail.com" />
                 @error("email")
-                    <p class="text-red-500 text-xs font-bold mt-2">{{ $message }}</p>
+                    <p class="text-red-500 text-xs font-bold mt-1">{{ $message }}</p>
                 @enderror
             </flux:field>
         </div>
@@ -58,7 +60,7 @@
                 <flux:label>Votre message<span class="text-red-500">*</span></flux:label>
                 <flux:textarea wire:model="message" placeholder="Exprimer vos idées ici..." />
                 @error("message")
-                    <p class="text-red-500 text-xs font-bold mt-2">{{ $message }}</p>
+                    <p class="text-red-500 text-xs font-bold mt-1">{{ $message }}</p>
                 @enderror
             </flux:field>
         </div>

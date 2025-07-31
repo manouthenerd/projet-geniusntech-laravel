@@ -57,6 +57,8 @@ class ServiceController extends Controller
             'identifier'    => Str::slug($validated['title'])
         ]);
 
+        return redirect(route('dashboard.services'));
+
     }
 
     public function update(Request $request, Service $service)
@@ -91,18 +93,5 @@ class ServiceController extends Controller
         $service->save();
 
         return redirect(route('dashboard.show-service', ['service' => $service->id]));
-    }
-
-    public function destroy(Service $service)
-    {
-        abort_if(! $service, 403);
-
-        // Supprimer l'image du serveur
-        Storage::disk("public")->delete($service->image);
-
-        // Supprimer ensuite le service
-        $service->delete();
-
-        return redirect()->back();
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Livewire;
 
-class DashboardArticles extends Blogs
-{   
+use Livewire\Component;
 
-    #[\Override]
+class DashboardArticles extends Component
+{   
     public function render()
     {
         return view('livewire.dashboard-articles');

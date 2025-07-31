@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard/services/{service}', [ServiceController::class, 'show'])->name('dashboard.show-service');
     Route::put('dashboard/services/{service}', [ServiceController::class, 'update'])->name('dashboard.show-service');
     Route::get('dashboard/services/{service}/edit', [ServiceController::class, 'edit'])->name('dashboard.edit-service');
+    Route::delete('dashboard/services/{service}', [ServiceController::class, 'destroy'])->name('dashboard.delete-service');
 
     Route::get('dashboard/blogs', DashboardArticles::class)->name('dashboard.blogs');
 

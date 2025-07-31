@@ -7,19 +7,33 @@
                      class="font-bold text-4xl rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045] p-1">
                      Spécialiste <span class="text-[#068fcf]">Des <br>Nouvelles</span> Technologies
                  </h3>
-                 <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000"
+                 <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000"
                      class="text-[14.5px] p-2 font-medium rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045]">
-                     Dans un monde ultra-connecté, sécuriser vos infrastructures n’est plus une option.
-                     Genius Network Technology vous propose des solutions réseau et télécom sur mesure pour
-                     protéger vos biens, vos données et vos équipes, en toute fiabilité.
-                 </p>
+                     <p class="mt-2">
+                         Dans un monde en constante évolution, où la digitalisation et l’urbanisation redéfinissent nos
+                         environnements, la sécurité des biens et des personnes devient une priorité stratégique.
+                     </p>
+                     <p class="mt-2">
+                         Chez <span class="text-[#068fcf] font-bold">Genius Network Technology</span>, nous accompagnons
+                         les entreprises et les collectivités dans la
+                         mise en place de
+                         solutions innovantes en <span class="text-[#068fcf]">réseau</span> et <span
+                             class="text-[#068fcf]">télécommunication</span> pour renforcer leur
+                         infrastructure,
+                         garantir la
+                         continuité de service et <span class="text-[#068fcf]"> assurer une protection
+                         optimale</span> face aux nouveaux défis technologiques
+                         et
+                         sécuritaires.
+                     </p>
+                 </div>
 
                  <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500" class="ml-0.5">
                      <button
                          class="bg-black text-white font-bold border border-black ring-1 ring-black ring-offset-2 rounded p-2 text-center">
-                        <a href="{{route("contact")}}">
-                            Une idée de projet ? <span class="animate-pulse">📝</span>
-                        </a>
+                         <a href="{{ route('contact') }}">
+                             Une idée de projet ? <span class="animate-pulse">📝</span>
+                         </a>
                      </button>
                  </div>
              </div>
@@ -65,23 +79,21 @@
              </div>
              <div class="w-full">
                  <ul id="services" class="grid grid-cols-2 max-[830px]:grid-cols-1 w-full space-y-4 space-x-4">
-                    @foreach ($services as $service)
-                        
-                    
-                     <a href="services/{{$service['identifier']}}" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="1000"
-                         class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto" >
-                         <div>
-                             <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                 src="{{$service['image']}}" />
-                         </div>
-                         <div class="text-white flex flex-col justify-around">
-                             <h3 class="text-slate-400">{{$service["title"]}}</h3>
-                             <p class="text-slate-600 w-full">
-                                 {{$service['summary']}}
-                             </p>
-                         </div>
-                     </a>
-
+                     @foreach ($services as $service)
+                         <a href="services/{{ $service['identifier'] }}" data-aos="fade-up" data-aos-duration="1300"
+                             data-aos-delay="1000"
+                             class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
+                             <div>
+                                 <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
+                                     src="{{ $service['image'] }}" />
+                             </div>
+                             <div class="text-white flex flex-col justify-around">
+                                 <h3 class="text-slate-400">{{ $service['title'] }}</h3>
+                                 <p class="text-slate-600 w-full">
+                                     {{ $service['summary'] }}
+                                 </p>
+                             </div>
+                         </a>
                      @endforeach
 
                  </ul>
