@@ -85,7 +85,8 @@
                              class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
                              <div>
                                  <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                     src="{{ $service['image'] }}" />
+                                     src="{{ str_starts_with($service['image'], 'images/') ? asset($service['image']) : asset('storage/' . $service['image']) }}" 
+                                     alt="{{ $service['title'] }}" />
                              </div>
                              <div class="text-white flex flex-col justify-around">
                                  <h3 class="text-slate-400">{{ $service['title'] }}</h3>

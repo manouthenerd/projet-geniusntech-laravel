@@ -13,12 +13,11 @@
             — {{ $service['summary'] }}
         </p>
     </section>
-
     <section class="mx-4 gap-4 p-2">
 
         <div class="text-zinc-600 min-[750px]:w-[80%] space-y-4 border border-slate-200 rounded p-2">
             <div>
-                <img class="rounded" src="{{ $service['image'] }}" alt="image d'illustration">
+                <img class="rounded" src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : '/storage/'. $service['image'] }}" alt="image d'illustration">
             </div>
             <div class="space-y-4">
                 {!! $service['description'] !!}

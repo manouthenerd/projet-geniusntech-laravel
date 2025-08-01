@@ -28,7 +28,7 @@
 
                                     <div>
                                         <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                            src="{{ $service['image'] }}" />
+                                        src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : '/storage/'. $service['image'] }}"                                        alt="{{ $service['title'] }}" />
                                     </div>
 
                                     <div class="text-white flex flex-col justify-around">
@@ -43,8 +43,7 @@
                                             <flux:badge color="blue">Modifier</flux:badge>
                                         </flux:button>
                                         <flux:button type="submit" wire:click="destroy({{ $service['id'] }})">
-                                            {{-- <flux:badge color="red">Supprimer</flux:badge> --}}
-                                            Supprimer
+                                            <flux:badge color="red">Supprimer</flux:badge>
                                         </flux:button>
                                     </div>
 

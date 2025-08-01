@@ -5,7 +5,7 @@
     class="grid justify-between h-[400px] group hover:cursor-pointer p-2 gap-2 shadow shadow-zinc-200 rounded bg-[#00669A] blog hover:bg-white">
     <div class="space-y-4 h-full flex flex-col justify-between">
         <div class="overflow-hidden">
-            <img class="overflow-hidde object-cover h-[203px] w-full rounded" src="{{ asset($image) }}"
+            <img class="overflow-hidde object-cover h-[203px] w-full rounded" src="{{ asset('storage/' . $image) }}"
                 alt="{{ $title }}">
         </div>
         <div class="flex flex-col justify-evenly p-2 space-y-2">

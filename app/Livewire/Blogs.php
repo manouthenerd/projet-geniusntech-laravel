@@ -47,16 +47,22 @@ class Blogs extends Component
             $query->where('title', 'like', '%' . $this->search . '%');
         }
 
-        // Récupère le premier article
-        $this->first_article = $query->first(['id', 'title', 'content', 'image', 'created_at']);
+        // Récupère tous les articles
+        $allArticles = $query->orderBy('created_at', 'desc')->get(['id', 'title', 'content', 'image', 'created_at']);
 
-        // Récupère les autres articles
-        if ($this->first_article) {
-            $this->articles = (clone $query)
-                ->where('id', '<>', $this->first_article->id)
-                ->get(['id', 'title', 'content', 'image', 'created_at']);
-
+        if ($allArticles->count() > 0) {
+            // Le premier article (le plus récent) sera affiché en grand format
+            $this->first_article = $allArticles->first();
+            
+            // Les autres articles seront affichés en grille
+            if ($allArticles->count() > 1) {
+                $this->articles = $allArticles->slice(1);
+            } else {
+                // S'il n'y a qu'un seul article, on ne l'affiche que dans la section principale
+                $this->articles = collect();
+            }
         } else {
+            $this->first_article = null;
             $this->articles = collect();
         }
     }

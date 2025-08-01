@@ -10,7 +10,7 @@
 
             <div
                 class="mt-5 p-4 relative z-10 bg-[#FAFAFA] border border-gray-200 rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
-                <form method="post" class="p-2 space-y-4" enctype="multipart/form-data">
+                <form method="post" action="{{ route('dashboard.save-blog', ['blog' => $id]) }}" class="p-2 space-y-4" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
@@ -75,7 +75,7 @@
                         </label>
                         
                         @if (request()->is("dashboard/blogs/$id/edit"))
-                            <input type="text" hidden id="text-editor_input" value="{!! $article['content'] !!}">
+                            <input type="text" hidden id="text-editor_input" name="content" value="{!! $article['content'] !!}">
                     
                             <x-trix-input value="{!! $article['content'] !!}" class="text-zinc-600" id="text-editor"
                                 name="content" placeholder="Contenu de l'article ici..." required />
@@ -85,7 +85,7 @@
                         @if (request()->is("dashboard/blogs/$id"))
                             <div class="w-full shadow-inner p-4 h-[350px] text-zinc-600 overflow-scroll rounded">
                                 {!! $article['content'] !!}
-                            </div>
+                            </div>  
                         @endif
                     </div>
 

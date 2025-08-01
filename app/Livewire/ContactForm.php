@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -88,6 +88,18 @@ class ContactForm extends Component
         } catch (\Exception $e) {
             // En cas d'erreur, on garde les données du formulaire
             $this->errorMessage = "Erreur lors de l'envoi du message. Veuillez réessayer. \n " . $e->getMessage();
+            
+            // Log détaillé pour debug
+            Log::error('Erreur SMTP détaillée', [
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+                'mail_config' => [
+                    'host' => config('mail.mailers.smtp.host'),
+                    'port' => config('mail.mailers.smtp.port'),
+                    'username' => config('mail.mailers.smtp.username'),
+                    'encryption' => config('mail.mailers.smtp.encryption'),
+                ]
+            ]);
         }
     }
 

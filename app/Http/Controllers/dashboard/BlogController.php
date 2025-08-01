@@ -12,16 +12,15 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public string $title = '';
-    public string $summary = '';
     public string $category = '';
     public string $content = '';
     public $image = '';
 
     public function index()
     {
-        $first_article = Blog::first()->first(['id', 'title', 'summary', 'content', 'image']);
+        $first_article = Blog::first()->first(['id', 'title', 'category', 'content', 'image']);
 
-        $articles = Blog::where('id', '<>', $first_article->id)->get(['id', 'title', 'summary', 'content', 'image']);
+        $articles = Blog::where('id', '<>', $first_article->id)->get(['id', 'title', 'category', 'content', 'image']);
 
         return view('dashboard.blogs', ['articles' => $articles, 'first_article' => $first_article]);
     }
@@ -33,21 +32,20 @@ class BlogController extends Controller
 
     public function show(Blog $blog)
     {
-        $article = $blog->only(['id', 'title', 'category', 'summary', 'content', 'image']);
+        $article = $blog->only(['id', 'title', 'category', 'content', 'image']);
 
         return view('article.edit-article', ['article' => $article, 'id' => $article['id'], 'title' => "Aperçu de l'article"]);
     }
 
     public function edit(Blog $blog)
     {
-        $article = $blog->only(['id', 'title', 'category', 'summary', 'content', 'image']);
+        $article = $blog->only(['id', 'title', 'category', 'content', 'image']);
 
         return view('article.edit-article', ['article' => $article, 'id' => $article['id'], 'title' => "Modification de l'article"]);
     }
 
     public function save(Blog $blog, ArticleFormRequest $request)
     {
-
         if ($request->file('image')) {
 
             // Récuperer l'image contenu dans la requête
@@ -63,7 +61,7 @@ class BlogController extends Controller
             if ((bool) $image_path) {
 
                 // Récupérer l'article et modifier les informations
-                $updated_article = Blog::editArticle($blog->id, $request->title, $request->summary, $request->category, $request->content, $image_path);
+                $updated_article = Blog::editArticle($blog->id, $request->title, $request->category, $request->content, $image_path);
 
                 if ((bool) $updated_article) {
                     Storage::disk('public')->delete($blog->image);
@@ -72,7 +70,7 @@ class BlogController extends Controller
 
             return redirect()->back()->with(['success_message' => "Article modifié avec succès !✅"]);
         } else {
-            $updated_article = Blog::editArticle($blog->id, $request->title, $request->summary, $request->category, $request->content, $blog->image);
+            $updated_article = Blog::editArticle($blog->id, $request->title, $request->category, $request->content, $blog->image);
 
             return redirect()->back()->with(['success_message' => "Article modifié avec succès !✅"]);
         }

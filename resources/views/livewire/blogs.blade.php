@@ -44,7 +44,7 @@
                         class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-[#00669A] blog">
                         <div>
                             <img style="height: 300px;width: 100%;object-fit: cover;" class="rounded"
-                                src="storage/{{$first_article->image }}" alt="{{ $first_article->title }}">
+                                src="{{ asset('storage/' . $first_article->image) }}" alt="{{ $first_article->title }}">
                         </div>
                         <div class="flex flex-col justify-evenly p-2">
                             <h4 class="text-white font-bold underline">{{ $first_article->title }}</h4>
@@ -67,42 +67,43 @@
                 </div>
             @endif
 
-            <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-2 bg-zinc-50">
-                @forelse ($articles as $article)
-                    <li
-                        class="grid justify-between h-[400px] group hover:cursor-pointer p-2 gap-2 shadow shadow-zinc-200 rounded bg-[#00669A] blog hover:bg-white">
-                        <div class="space-y-4 h-full flex flex-col justify-between">
-                            <div class="overflow-hidden">
-                                <img class="overflow-hidde object-cover h-[203px] w-full rounded"
-                                    src="storage/{{$article->image}}" alt="{{ $article->title }}">
-                            </div>
-                            <div class="flex flex-col justify-evenly p-2 space-y-2">
-                                <a wire:navigate href="{{ route('blog', ['blog' => $article->id]) }}"
-                                    class="text-white hover:text-zinc-800 group-hover:text-black hover:underline transition-all">{{ $article->title }}</a>
-                                <div class="text-xs text-zinc-600 space-y-4">
-                                    <p class="ml-1 text-white group-hover:text-black font-bold">
-                                        Publié le {{ \Carbon\Carbon::parse($article->created_at)->format('d-m-y') }}
-                                    </p>
+            @if ($articles->count() > 0)
+                <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-2 bg-zinc-50">
+                    @foreach ($articles as $article)
+                        <li
+                            class="grid justify-between h-[400px] group hover:cursor-pointer p-2 gap-2 shadow shadow-zinc-200 rounded bg-[#00669A] blog hover:bg-white">
+                            <div class="space-y-4 h-full flex flex-col justify-between">
+                                <div class="overflow-hidden">
+                                    <img class="overflow-hidde object-cover h-[203px] w-full rounded"
+                                        src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}">
+                                </div>
+                                <div class="flex flex-col justify-evenly p-2 space-y-2">
+                                    <a wire:navigate href="{{ route('blog', ['blog' => $article->id]) }}"
+                                        class="text-white hover:text-zinc-800 group-hover:text-black hover:underline transition-all">{{ $article->title }}</a>
                                     <div class="text-xs text-zinc-600 space-y-4">
-                                        <div>
-                                            <flux:button size="sm"
-                                                class="w-full text-center transition-colors hover:text-[#025889]"
-                                                href="blogs/{{ $article->id }}" wire:navigate>
-                                                Lire tout l'article
-                                            </flux:button>
+                                        <p class="ml-1 text-white group-hover:text-black font-bold">
+                                            Publié le {{ \Carbon\Carbon::parse($article->created_at)->format('d-m-y') }}
+                                        </p>
+                                        <div class="text-xs text-zinc-600 space-y-4">
+                                            <div>
+                                                <flux:button size="sm"
+                                                    class="w-full text-center transition-colors hover:text-[#025889]"
+                                                    href="blogs/{{ $article->id }}" wire:navigate>
+                                                    Lire tout l'article
+                                                </flux:button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-
-                @empty
-                    <li class="col-span-3 text-center text-zinc-400 py-8">Aucun article trouvé.</li>
-                @endforelse
-            </ul>
-
-
+                        </li>
+                    @endforeach
+                </ul>
+            @elseif (!$first_article)
+                <div class="text-center text-zinc-400 py-8">
+                    <p>Aucun article trouvé.</p>
+                </div>
+            @endif
         </article>
     </section>
 
