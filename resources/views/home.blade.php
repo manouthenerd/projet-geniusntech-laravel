@@ -17,11 +17,11 @@
                          Chez <span class="text-[#068fcf] font-bold">Genius Network Technology</span>, nous accompagnons
                          les entreprises et les collectivités dans la
                          mise en place de
-                         solutions innovantes en <span class="text-[#068fcf]">réseau</span> et <span
-                             class="text-[#068fcf]">télécommunication</span> pour renforcer leur
+                         solutions innovantes en <span class="text-[#068fcf] underline decoration-slate-500">réseau</span> et <span
+                             class="text-[#068fcf] underline decoration-slate-500 shadow-lg">télécommunication</span> pour renforcer leur
                          infrastructure,
                          garantir la
-                         continuité de service et <span class="text-[#068fcf]"> assurer une protection
+                         continuité de service et <span class="text-[#068fcf] underline decoration-slate-500"> assurer une protection
                          optimale</span> face aux nouveaux défis technologiques
                          et
                          sécuritaires.
@@ -85,8 +85,8 @@
                              class="grid grid-cols-2 gap-2 p-2 rounded bg-white shadow-sm max-h-auto">
                              <div>
                                  <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                     src="{{ str_starts_with($service['image'], 'images/') ? asset($service['image']) : asset('storage/' . $service['image']) }}" 
-                                     alt="{{ $service['title'] }}" />
+                                 src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : 'storage/'.$service['image'] }}" 
+                                 alt="{{ $service['title'] }}" />
                              </div>
                              <div class="text-white flex flex-col justify-around">
                                  <h3 class="text-slate-400">{{ $service['title'] }}</h3>
@@ -118,7 +118,7 @@
                                  <span class="italic text-slate-200">Eléveur</span>
                              </p>
                          </div>
-                         <p class="italic bg-transparent backdrop-blur-2xl text-neutral-300">
+                         <p class="italic text-neutral-300">
                              “J'ai été épaté par le professionnalisme et les compétences des agents de
                              Genius. Je recommande leurs services.”
                          </p>
@@ -135,7 +135,7 @@
                                  <span class="italic text-slate-200">Particulier</span>
                              </p>
                          </div>
-                         <p class="italic bg-transparent backdrop-blur-2xl text-neutral-300">
+                         <p class="italic text-neutral-300">
                              “J'ai fait appel aux services de livraison de Genius Network Technology et j'ai été
                              satisfaite du délai de livraison
                              assez court.”

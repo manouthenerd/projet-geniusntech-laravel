@@ -45,7 +45,7 @@
 
                     @if (request()->is("dashboard/services/$service->id/edit"))
                         <div id="upload-box" style="overflow: hidden; text-overflow: ellipsis">
-                            <flux:input id="upload-input" type="file" name='image'
+                            <flux:input id="upload-input" type="file" name="image"
                                 label="Sélectionner l'image d'illustration" class="text-zinc-400" />
                         </div>
                     @endif

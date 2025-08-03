@@ -79,10 +79,6 @@ class ServiceController extends Controller
             $image_path = Upload::store($image, "services");
         }
 
-        if(! (bool) $image_path) {
-            return back()->withErrors(['image' => "La taille de l'image doit être ≤ 10Mo"]);
-        }
-
         // Modification des données
         $service->title = $request->input('title');
         $service->summary = $request->input('summary');

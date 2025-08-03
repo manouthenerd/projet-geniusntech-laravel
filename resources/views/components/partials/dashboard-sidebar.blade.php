@@ -2,7 +2,7 @@
   left-0">  {{--Ne pas toucher la répétition de la classe left, elle sert à dynamiser l'affichage du menu latéral --}}    
          <div class="grid w-full">
             <flux:button id="close-menu-button" icon="x-mark" variant="ghost" class="cursor-pointer justify-self-end" />
-                <a href="{{route('home')}}" wire:navigate>
+                <a href="{{route('home')}}">
                     <img src="/images/logo-genius.png" alt="logo Genius">
                 </a>
          </div>

@@ -42,7 +42,7 @@
                                         <flux:button href="services/{{ $service['id'] }}">
                                             <flux:badge color="blue">Modifier</flux:badge>
                                         </flux:button>
-                                        <flux:button type="submit" wire:click="destroy({{ $service['id'] }})">
+                                        <flux:button type="submit" wire:click="destroy({{ $service['id'] }})" class="cursor-pointer">
                                             <flux:badge color="red">Supprimer</flux:badge>
                                         </flux:button>
                                     </div>
