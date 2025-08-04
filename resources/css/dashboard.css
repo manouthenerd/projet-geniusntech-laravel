@@ -1,3 +1,7 @@
+#services a {
+    transition: all .4s;
+}
+
 .close-sidebar {
     transition: all .5s;
 }

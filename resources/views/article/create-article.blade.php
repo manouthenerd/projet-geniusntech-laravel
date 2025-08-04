@@ -41,7 +41,7 @@
 
                     <div class="h-[300px] object-cover border border-zinc-100 rounded grid place-content-center p-4">
                         <flux:button id="close-button" class="hide-close-btn" icon="x-mark" variant="subtle" />
-                        <img src="" id="image" class="rounded ring ring-white h-[200px] hidden my-2">
+                        <img src="" id="image" class="rounded ring ring-white h-[200px] hidden my-2" alt="image d'illustration de l'article">
                         <div id="to-hidden" class="text-slate-300 text-xs flex flex-col">
                             <x-ui.image-icon></x-ui.image-icon>
                             <p>L'image apparaitra ici...</p>

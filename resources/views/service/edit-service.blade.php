@@ -53,7 +53,7 @@
                     <div class="h-[300px] object-cover border border-zinc-100 rounded grid place-content-center p-4">
                         <flux:button id="close-button" class="hide-close-btn" icon="x-mark" variant="subtle" />
                         <img src="{{asset( $service->image )}}" id="image"
-                            class="rounded ring ring-white h-[200px] my-2">
+                            class="rounded ring ring-white h-[200px] my-2" alt="image d'illustration du service">
                        
                     </div>
 

@@ -8,7 +8,7 @@
     <header class="w-full z-[999] min-h-10 p-2 bg-white font-thin sticky top-0">
         <nav class="flex justify-around max-[960px]:justify-between max-[960px]:px-8 items-center">
             <a href="/">
-                <img src="/images/logo-genius.png" width="170" height="55" />
+                <img src="/images/logo-genius.png" width="170" height="55" alt="logo de Genius Network Technology" />
             </a>
 
             <div id="mainLinks" class="flex gap-2 text-sm space-x-2 items-center max-[960px]:hidden">
@@ -72,18 +72,18 @@
                 <p class="uppercase text-[#025686] font-bold">Réseaux sociaux</p>
                 <ul class="flex items-center gap-2 min-[850px]:justify-center mt-4">
                     <li>
-                        <a href="/#">
+                        <a href="/#linkedin">
                             <x-ui.linkedin />
                         </a>
                     </li>
                     <li>
-                        <a href="/#">
+                        <a href="/#facebook">
 
                             <x-ui.facebook />
                         </a>
                     </li>
                     <li>
-                        <a href="/#">
+                        <a href="/#twitter">
 
                             <x-ui.twitter />
                         </a>
@@ -92,7 +92,7 @@
             </div>
             <div class="justify-end max-[520px]:mr-[65px]">
                 <p>
-                    <img class="w-[150px] h-[50px] object-contain" src="/images/logo-genius.png" />
+                    <img class="w-[150px] h-[50px] object-contain" src="/images/logo-genius.png" alt="logo de Genius Network Technology" />
                 </p>
                 <p>
                     Smart Life, Best Life — ⭐

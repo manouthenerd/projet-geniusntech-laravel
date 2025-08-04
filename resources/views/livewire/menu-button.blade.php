@@ -1,5 +1,5 @@
 <div class="min-[960px]:hidden">
-    <button >
+    <button aria-label="menu-button">
         <label class="hamburger">
             <input type="checkbox" />
             <svg id="menu-button" viewBox="0 0 32 32">

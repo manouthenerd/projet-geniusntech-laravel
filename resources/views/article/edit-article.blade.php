@@ -57,7 +57,7 @@
                         <flux:button id="close-button" class="hide-close-btn" icon="x-mark" variant="subtle" />
                         <div>
                             <img src="{{ asset($article['image']) }}" @class(['hidden' => false]) id="image"
-                                class="rounded ring ring-white w-fit h-[180px] my-2">
+                                class="rounded ring ring-white w-fit h-[180px] my-2" alt="image d'illustration de l'article">
                         </div>
                         <div id="to-hidden" class="text-slate-300 text-xs flex flex-col">
                             <x-ui.image-icon></x-ui.image-icon>

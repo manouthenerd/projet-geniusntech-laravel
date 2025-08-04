@@ -14,7 +14,6 @@
 
         <div>
             <article class="mx-8">
-
                 <div>
                     <div class="w-full">
 
@@ -28,7 +27,7 @@
 
                                     <div>
                                         <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                        src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : '/storage/'. $service['image'] }}"                                        alt="{{ $service['title'] }}" />
+                                        src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : '/storage/'. $service['image'] }}" alt="image d'illustration de {{ $service['title'] }}" />
                                     </div>
 
                                     <div class="text-white flex flex-col justify-around">

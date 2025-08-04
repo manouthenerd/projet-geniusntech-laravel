@@ -36,7 +36,7 @@
                           class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-white blog">
                           <div>
                               <img style="height: 300px;width: 100%;object-fit: cover;" class="rounded"
-                                  src="{{ asset($first_article->image) }}" alt="livraison">
+                                  src="{{ asset($first_article->image) }}" alt="image d'illustration de l'article">
                           </div>
                           <div class="flex flex-col justify-evenly p-2">
                               <h4 class="text-zinc-600">{{ $first_article->title }}</h4>

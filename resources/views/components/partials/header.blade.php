@@ -1,10 +1,11 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html doctype="html" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 {{-- Made by KACOU² Emmanuel --}}
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Genius Network Technology est une entreprise de technologie de l'information et de la communication. Nous offrons des solutions de télécommunication et de réseaux informatiques.">
 
     <title> {{ $title }} - Geniusntech</title>
 

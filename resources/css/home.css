@@ -1,3 +1,7 @@
+.fit-box {
+    height: fit-content !important;
+}
+
 #header-section {
     background-image: url('/images/tech.jpg');
     background-position: top/right;

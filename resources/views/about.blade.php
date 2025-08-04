@@ -118,7 +118,7 @@
             <h3 class="text-xl font-semibold text-slate-400">Notre vision </h3>
             <div class="grid min-[1000px]:grid-cols-2 max-[1000px]:grid-cols-1 gap-8">
                 <div data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000" class="content-center">
-                    <img class="rounded-sm h-full max-[1000px]:w-full" src="/images/vision.jpg" />
+                    <img class="rounded-sm h-full max-[1000px]:w-full" src="/images/vision.jpg" alt="vision" />
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200"

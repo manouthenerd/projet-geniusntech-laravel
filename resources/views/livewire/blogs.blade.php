@@ -75,7 +75,7 @@
                             <div class="space-y-4 h-full flex flex-col justify-between">
                                 <div class="overflow-hidden">
                                     <img class="overflow-hidde object-cover h-[203px] w-full rounded"
-                                        src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}">
+                                        src="{{ asset('storage/' . $article->image) }}" alt="image d'illustration de {{ $article->title }}">
                                 </div>
                                 <div class="flex flex-col justify-evenly p-2 space-y-2">
                                     <a wire:navigate href="{{ route('blog', ['blog' => $article->id]) }}"

@@ -16,7 +16,7 @@
                     </h2>
 
                     <div>
-                        <img class="rounded" src="{{asset('storage/' . $article['image'])}}" alt="{{$article['title']}}">
+                        <img class="rounded" src="{{asset('storage/' . $article['image'])}}" alt="image d'illustration de {{$article['title']}}">
                     </div>
 
                 </div>
