@@ -17,11 +17,11 @@
                          Chez <span class="text-[#068fcf] font-bold">Genius Network Technology</span>, nous accompagnons
                          les entreprises et les collectivités dans la
                          mise en place de
-                         solutions innovantes en <span class="text-[#068fcf] underline decoration-slate-500">réseau</span> et <span
-                             class="text-[#068fcf] underline decoration-slate-500 shadow-lg">télécommunication</span> pour renforcer leur
+                         solutions innovantes en <span class="text-[#068fcf]">réseau</span> et <span
+                             class="text-[#068fcf]">télécommunication</span> pour renforcer leur
                          infrastructure,
                          garantir la
-                         continuité de service et <span class="text-[#068fcf] underline decoration-slate-500"> assurer une protection
+                         continuité de service et <span class="text-[#068fcf]"> assurer une protection
                          optimale</span> face aux nouveaux défis technologiques
                          et
                          sécuritaires.
