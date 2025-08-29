@@ -2,13 +2,16 @@
 
     <section id="header-section" class="bg-blue-50 w-full min-h-30 p-1">
         <div class="w-full min-h-150 overflow-hidden text-white grid min-[750px]:grid-cols-2">
-            <div class="p-4 space-y-2 min-[750px]:mt-8 h-full grid justify-between">
-                <h3 data-aos="fade-up" data-aos-duration="1200"
-                    class="font-bold text-4xl rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045] p-1">
-                    Spécialiste <span class="text-[#068fcf]">Des <br>Nouvelles</span> Technologies
-                </h3>
+            <div class="p-4 min-[750px]:mt-8 grid gap-2">
+              
+                <div id="strength" data-aos="fade-up" data-aos-duration="1200"
+                    class="text-4xl space-y-1.5 font-bold rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045] p-1">
+                    <p>Innovation.</p>
+                    <p>Connectivité.</p>
+                    <p>Sécurité.</p>
+                </div>
                 <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000"
-                     class="text-[14.5px] fit-box p-2 font-medium rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045]">
+                    class="text-[14.5px] fit-box p-2 font-medium rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045]">
                     <p class="mt-2">
                         Dans un monde en constante évolution, où la digitalisation et l’urbanisation redéfinissent nos
                         environnements, la sécurité des biens et des personnes devient une priorité stratégique.
@@ -22,7 +25,7 @@
                         infrastructure,
                         garantir la
                         continuité de service et <span class="text-[#068fcf]"> assurer une protection
-                         optimale</span> face aux nouveaux défis technologiques
+                            optimale</span> face aux nouveaux défis technologiques
                         et
                         sécuritaires.
                     </p>
@@ -63,9 +66,44 @@
             </div>
 
             <div data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1000">
-                <h2 class="text-xl font-semibold  text-slate-400">💡</h2>
-                <div class="shadow shadow-slate-100">
-                    <img src="/images/img.jpg" alt="fibre optique" class="rounded-xl" aria-label="fibre optique">
+                <h2 class="text-xl font-semibold bg-white  text-slate-400">Votre partenaire de confiance</h2>
+                <div class="p-2">
+                    <p class="mt-4 text-slate-700">
+                        Depuis sa création, Genius Network Technology accompagne PME, grands comptes et collectivités
+                        dans la sécurisation et la transformation de leurs infrastructures. Notre équipe
+                        pluridisciplinaire met en œuvre des solutions robustes et évolutives, répondant aux standards
+                        les plus exigeants.
+                    </p>
+                    <ul class="mt-6 space-y-3 text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="w-5 h-5 mt-0.5">
+                                <x-ui.svg.shield></x-ui.svg.shield>
+                            </i>
+                            <div>
+                                <span class="font-medium #1895C2">Sécurité renforcée</span>
+                                <p class="text-sm text-slate-400">Vidéosurveillance intelligente, supervision et archivage sécurisé.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="w-5 h-5 mt-0.5">
+                                <x-ui.svg.network></x-ui.svg.network>
+                            </i>
+                            <div>
+                                <span class="font-medium #1895C2">Connectivité fiable</span>
+                                <p class="text-sm text-slate-400">Réseaux filaires et Wi‑Fi, interconnexions
+                                    multi‑sites.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="w-5 h-5 mt-0.5">
+                                <x-ui.svg.cpu></x-ui.svg.cpu>
+                            </i>                            <div>
+                                <span class="font-medium #1895C2">Innovation utile</span>
+                                <p class="text-sm text-slate-400">Intégration IT orientée métier.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -81,12 +119,12 @@
                 <ul id="services" class="grid grid-cols-2 max-[830px]:grid-cols-1 w-full space-y-4 space-x-4">
                     @foreach ($services as $service)
                         <a href="services/{{ $service['identifier'] }}" data-aos="fade-up" data-aos-duration="1300"
-                           data-aos-delay="1000"
-                           class="grid grid-cols-2 group transition-colors gap-2 p-2 rounded bg-white shadow-sm max-h-auto hover:bg-[#80808012]">
+                            data-aos-delay="1000"
+                            class="grid grid-cols-2 group transition-colors gap-2 p-2 rounded bg-white shadow-sm max-h-auto hover:bg-[#80808012]">
                             <div>
                                 <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                     src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : 'storage/'.$service['image'] }}"
-                                     alt="{{ $service['title'] }}"/>
+                                    src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : 'storage/' . $service['image'] }}"
+                                    alt="{{ $service['title'] }}" />
                             </div>
                             <div class="text-white flex flex-col justify-around">
                                 <h3 class="text-slate-400 group-hover:text-[#068fcf]">{{ $service['title'] }}</h3>
@@ -154,7 +192,8 @@
                 <ul id="partners"
                     class="flex gap-2 max-[630px]:grid max-[630px]:grid-rows-2 max-[630px]:grid-cols-2 items-center">
                     <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1000">
-                        <img class="size-[150px] object-fit" src="/images/partners/22 mai 2025, 14_24_30.png" alt="22 mai 2025, 14_24_30" />
+                        <img class="size-[150px] object-fit" src="/images/partners/22 mai 2025, 14_24_30.png"
+                            alt="22 mai 2025, 14_24_30" />
                     </li>
                     <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1100">
                         <img class="size-[150px] object-fit" src="/images/partners/ccci-ue.png" alt="ccci-ue" />

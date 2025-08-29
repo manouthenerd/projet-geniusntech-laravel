@@ -1,4 +1,5 @@
-.fit-box {
+.fit-box,
+#strength {
     height: fit-content !important;
 }
 

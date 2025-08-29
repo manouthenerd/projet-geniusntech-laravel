@@ -1,4 +1,4 @@
-<html doctype="html" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html doctype="html" lang="fr">
 
 {{-- Made by KACOU² Emmanuel --}}
 
