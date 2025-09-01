@@ -31,3 +31,29 @@
         font-size: 14px;
     }
 }
+
+#mainLinks a {
+    font-weight: 600;
+}
+
+#award-genius-bg {
+    height: 250px !important;
+}
+
+#award-container {
+    background: black;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.reward-box {
+    align-items: normal;
+    background: #00000052;
+    backdrop-filter: blur(200px);
+}
+
+.text-integer {
+    font-size: 35px !important;
+    text-shadow: 2px 2px 1px #000;
+}

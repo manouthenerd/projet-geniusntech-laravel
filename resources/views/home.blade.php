@@ -3,7 +3,7 @@
     <section id="header-section" class="bg-blue-50 w-full min-h-30 p-1">
         <div class="w-full min-h-150 overflow-hidden text-white grid min-[750px]:grid-cols-2">
             <div class="p-4 min-[750px]:mt-8 grid gap-2">
-              
+
                 <div id="strength" data-aos="fade-up" data-aos-duration="1200"
                     class="text-4xl space-y-1.5 font-bold rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045] p-1">
                     <p>Innovation.</p>
@@ -17,14 +17,14 @@
                         environnements, la sécurité des biens et des personnes devient une priorité stratégique.
                     </p>
                     <p class="mt-2">
-                        Chez <span class="text-[#068fcf] font-bold">Genius Network Technology</span>, nous accompagnons
+                        Chez <span class="text-[#F4D55A]">Genius Network Technology</span>, nous accompagnons
                         les entreprises et les collectivités dans la
                         mise en place de
-                        solutions innovantes en <span class="text-[#068fcf]">réseau</span> et <span
-                            class="text-[#068fcf]">télécommunication</span> pour renforcer leur
+                        solutions innovantes en <span class="text-[#F4D55A] font-bold">réseau</span> et <span
+                            class="text-[#F4D55A] font-bold">télécommunication</span> pour renforcer leur
                         infrastructure,
                         garantir la
-                        continuité de service et <span class="text-[#068fcf]"> assurer une protection
+                        continuité de service et <span class="text-[#F4D55A] font-bold"> assurer une protection
                             optimale</span> face aux nouveaux défis technologiques
                         et
                         sécuritaires.
@@ -46,10 +46,10 @@
     <section class="p-2">
 
         <div class="grid min-[845px]:grid-cols-2 gap-2 p-2">
-            <div data-aos="fade-right" data-aos-duration="1200" class="space-y-2 bg-[#036a9c]">
+            <div data-aos="fade-right" data-aos-duration="1200" class="space-y-2 bg-gradient-to-tr from-gray-900 via-[#036a9c] to-[#1895C2]">
                 <h2 class="text-xl font-semibold text-slate-400 bg-white">Qui sommes-nous ?</h2>
 
-                <ul class="space-y-4 p-2 text-white bg-[#036a9c]">
+                <ul class="space-y-4 p-2 text-white">
                     <li>
                         GENIUS est une entreprise spécialisée dans le domaine de la télécommunication, la
                         radiocommunication, sécurité électronique, domotique, informatique, bâtiment et travaux public,
@@ -80,8 +80,9 @@
                                 <x-ui.svg.shield></x-ui.svg.shield>
                             </i>
                             <div>
-                                <span class="font-medium #1895C2">Sécurité renforcée</span>
-                                <p class="text-sm text-slate-400">Vidéosurveillance intelligente, supervision et archivage sécurisé.</p>
+                                <span class="font-medium text-[#036a9c]">Sécurité renforcée</span>
+                                <p class="text-sm text-slate-400">Vidéosurveillance intelligente, supervision et
+                                    archivage sécurisé.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
@@ -89,7 +90,7 @@
                                 <x-ui.svg.network></x-ui.svg.network>
                             </i>
                             <div>
-                                <span class="font-medium #1895C2">Connectivité fiable</span>
+                                <span class="font-medium text-[#036a9c]">Connectivité fiable</span>
                                 <p class="text-sm text-slate-400">Réseaux filaires et Wi‑Fi, interconnexions
                                     multi‑sites.
                                 </p>
@@ -98,12 +99,62 @@
                         <li class="flex items-start gap-3">
                             <i class="w-5 h-5 mt-0.5">
                                 <x-ui.svg.cpu></x-ui.svg.cpu>
-                            </i>                            <div>
-                                <span class="font-medium #1895C2">Innovation utile</span>
+                            </i>
+                            <div>
+                                <span class="font-medium text-[#036a9c]">Innovation utile</span>
                                 <p class="text-sm text-slate-400">Intégration IT orientée métier.</p>
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full grid justify-items-center space-y-4 gap-4 p-2  m-0 bg-gradient-to-tr from-gray-900 via-[#036a9c] to-[#1895C2]">
+            <p id="award-container" class="rounded-full flex justify-center items-center">
+                <img height="200" id="award-genius-bg" src="/images/bg-transparent-award.png" alt="award-genius-bg"
+                    data-aos="fade-up" data-aos-duration="1300" />
+            </p>
+
+            <div class="grid grid-cols-4 max-[1070px]:grid-cols-2 w-full gap-2 justify-center items-center">
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1000">
+                    <p class="flex items-center justify-between gap-2">
+                        <span class="font-bold text-integer text-blue-500">+10</span>
+                        <span class="bg-blue-300 rounded-full p-1">
+                            <x-ui.svg.cctv></x-ui.svg.cctv>
+                        </span>
+                    </p>
+                    <p class="mt-4 text-[darkgray] font-semibold">Projets aboutis</p>
+                </div>
+
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1200">
+                    <p class="flex items-center justify-between gap-2">
+                        <span class="text-integer font-bold text-orange-500">+10</span>
+                        <span class="bg-orange-300 rounded-full p-1">
+                            <x-ui.svg.building></x-ui.svg.building>
+                        </span>
+                    </p>
+                    <p class="mt-4 text-[darkgray] font-semibold">Structures acompagnées</p>
+                </div>
+
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1300">
+                    <p class="flex items-center justify-between gap-2">
+                        <span class="text-integer font-bold text-red-500">+07</span>
+                        <span class="bg-red-300 rounded-full p-1">
+                            <x-ui.svg.partner></x-ui.svg.partner>
+                        </span>
+                    </p>
+                    <p class="mt-4 text-[darkgray] font-semibold">Partenaires de confiances</p>
+                </div>
+
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1400">
+                    <p class="flex items-center justify-between gap-2">
+                        <span class="text-integer font-bold text-purple-500">+99%</span>
+                        <span class="bg-purple-300 rounded-full p-1">
+                            <x-ui.svg.badge-percentage></x-ui.svg.badge-percentage>
+                        </span>
+                    </p>
+                    <p class="mt-4 text-[darkgray] font-semibold">Taux de satisfaction</p>
                 </div>
             </div>
         </div>

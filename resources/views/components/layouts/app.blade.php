@@ -12,19 +12,18 @@
             </a>
 
             <div id="mainLinks" class="flex gap-2 text-sm space-x-2 items-center max-[960px]:hidden">
-                <a @class(['text-[#025686] font-bold' => request()->is('/')]) class="font-bold" href="/">Accueil</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('services')]) class="hover:text-[#025686]" href="/services">Services</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('blogs')]) class="hover:text-[#025686]" href="/blogs">Blogs</a>
+                <a @class(['text-[#025686]' => request()->is('/')]) class="font-bold" href="/">Accueil</a>
+                <a @class(['text-[#025686]' => request()->is('services')]) class="hover:text-[#025686] font-bold" href="/services" class="">Services</a>
+                <a @class(['text-[#025686]' => request()->is('blogs')]) class="hover:text-[#025686] font-bold" href="/blogs" class="font-bold">Blogs</a>
                 {{-- <a @class([
                     'text-[#025686] font-bold' => request()->is('nos-realisations'),
                 ]) class="hover:text-[#025686]" href="/nos-realisations">Nos
                     réalisations</a> --}}
-                <a @class(['text-[#025686] font-bold' => request()->is('a-propos')]) class="hover:text-[#025686]" href="/a-propos">À propos</a>
-                <a @class(['text-[#025686] font-bold' => request()->is('contact')]) class="hover:text-[#025686]" href="/contact"
-                >Contactez-nous</a>
+                    <a @class(['text-[#025686]' => request()->is('a-propos')]) class="hover:text-[#025686] font-bold" href="/a-propos" class="font-bold">À propos</a>
+                <a @class(['text-[#025686]' => request()->is('contact')]) class="hover:text-[#025686] font-bold" href="/contact">Contactez-nous</a>
             </div>
 
-            <div class="max-[960px]:hidden text-sm">
+            <div class="max-[960px]:hidden text-sm rounded-md px-2 py-1 border-2 border-y-[#01699f] border-x-[#d2b957]">
                 <a @class(['text-[#025686] font-bold' => request()->is('espace')]) href="/login">Espace admin</a>
             </div>
 
@@ -37,11 +36,11 @@
         <div id="mobile-navbar"
             class="fixed z-[1] transition-all w-[85%] h-[230px] min-[960px]:hidden min-h-10 px-[2rem] bg-[#0086c7] font-medium rounded-sm top-[80px]">
             <div class="grid gap-2 space-x-2 p-2 items-center">
-                <a class="{{ request()->routeIs('home') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('home') }}">Accueil</a>
-                <a class="{{ request()->routeIs('services') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('services') }}">Services</a>
+                <a class="{{ request()->routeIs('home') ? 'text-white font-bold' : 'hover:text-white ' }}" href="{{ route('home') }}">Accueil</a>
+                <a class="{{ request()->routeIs('services') ? 'text-white font-bold' : 'hover:text-white ' }}" href="{{ route('services') }}">Services</a>
                 <a class="{{ request()->routeIs('blogs') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('blogs') }}">Blogs</a>
                 {{-- <a class="hover:text-white" href="{{ route('achievements') }}">Nos réalisations</a> --}}
-                <a class="{{ request()->routeIs('about') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('about') }}">À propos</a>
+                <a class="{{ request()->routeIs('about') ? 'text-white font-bold' : 'hover:text-white ' }}" href="{{ route('about') }}">À propos</a>
                 <a class="{{ request()->routeIs('contact') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('contact') }}">Contactez-nous</a>
                 <a class="{{ request()->routeIs('login') ? 'text-white font-bold' : 'hover:text-white' }}" href="{{ route('login') }}">Espace admin</a>
             </div>
