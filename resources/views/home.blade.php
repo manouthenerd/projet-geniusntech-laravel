@@ -46,7 +46,8 @@
     <section class="p-2">
 
         <div class="grid min-[845px]:grid-cols-2 gap-2 p-2">
-            <div data-aos="fade-right" data-aos-duration="1200" class="space-y-2 bg-gradient-to-tr from-gray-900 via-[#036a9c] to-[#1895C2]">
+            <div data-aos="fade-right" data-aos-duration="1200"
+                class="space-y-2 bg-gradient-to-tr from-gray-900 via-[#036a9c] to-[#1895C2]">
                 <h2 class="text-xl font-semibold text-slate-400 bg-white">Qui sommes-nous ?</h2>
 
                 <ul class="space-y-4 p-2 text-white">
@@ -110,14 +111,16 @@
             </div>
         </div>
 
-        <div class="w-full grid justify-items-center space-y-4 gap-4 p-2  m-0 bg-gradient-to-tr from-gray-900 via-[#036a9c] to-[#1895C2]">
+        <div
+            class="w-full grid justify-items-center space-y-4 gap-4 p-2  m-0 bg-gradient-to-tr from-gray-900 via-[#036a9c] to-[#1895C2]">
             <p id="award-container" class="rounded-full flex justify-center items-center">
                 <img height="200" id="award-genius-bg" src="/images/bg-transparent-award.png" alt="award-genius-bg"
                     data-aos="fade-up" data-aos-duration="1300" />
             </p>
 
             <div class="grid grid-cols-4 max-[1070px]:grid-cols-2 w-full gap-2 justify-center items-center">
-                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1000">
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
+                    data-aos-duration="1200" data-aos-delay="1000">
                     <p class="flex items-center justify-between gap-2">
                         <span class="font-bold text-integer text-blue-500">+10</span>
                         <span class="bg-black rounded-full p-1">
@@ -127,7 +130,8 @@
                     <p class="mt-4 text-[darkgray] font-semibold">Projets aboutis</p>
                 </div>
 
-                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1200">
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
+                    data-aos-duration="1200" data-aos-delay="1200">
                     <p class="flex items-center justify-between gap-2">
                         <span class="text-integer font-bold text-orange-500">+10</span>
                         <span class="bg-black rounded-full p-1">
@@ -137,7 +141,8 @@
                     <p class="mt-4 text-[darkgray] font-semibold">Structures acompagnées</p>
                 </div>
 
-                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1300">
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
+                    data-aos-duration="1200" data-aos-delay="1300">
                     <p class="flex items-center justify-between gap-2">
                         <span class="text-integer font-bold text-red-500">+07</span>
                         <span class="bg-black rounded-full p-1">
@@ -147,7 +152,8 @@
                     <p class="mt-4 text-[darkgray] font-semibold">Partenaires de confiances</p>
                 </div>
 
-                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1400">
+                <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
+                    data-aos-duration="1200" data-aos-delay="1400">
                     <p class="flex items-center justify-between gap-2">
                         <span class="text-integer font-bold text-purple-500">+99%</span>
                         <span class="bg-black rounded-full p-1">
@@ -166,7 +172,7 @@
                     Découvrir tous nos services
                 </a>
             </div>
-            <div class="w-full">
+            {{-- <div class="w-full">
                 <ul id="services" class="grid grid-cols-2 max-[830px]:grid-cols-1 w-full space-y-4 space-x-4">
                     @foreach ($services as $service)
                         <a href="services/{{ $service['identifier'] }}" data-aos="fade-up" data-aos-duration="1300"
@@ -187,51 +193,199 @@
                     @endforeach
 
                 </ul>
-            </div>
+            </div> --}}
+
+        </div>
+
+        <div class="grid grid-cols-2 max-[850px]:grid-cols-1 gap-2">
+            <section class="category" id="category-tech">
+                <h2 class="category-title">Technologies & Communication</h2>
+
+                <div class="slider" data-duration="5000"> <!-- durée en ms -->
+                    <div class="slide active" style="background-image: url('/images/services/network.jpg');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Réseau informatique</h3>
+                            <p>Gestion et optimisation des réseaux d'entreprise.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('/images/services/camera.png');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Vidéosurveillance</h3>
+                            <p>Caméras et systèmes de sécurité intelligents.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('/images/services/radiocommunication.png');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Radiocommunication</h3>
+                            <p>Systèmes radio et liaison longue distance.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category" id="category-tech">
+                <h2 class="category-title">Construction & énergie</h2>
+
+                <div class="slider" data-duration="5000"> <!-- durée en ms -->
+                    <div class="slide active" style="background-image: url('/images/services/BTP.jpg');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Bâtiments et travaux publics</h3>
+                            <p>Des solutions solides et durables en construction et travaux publics, alliant qualité, expertise et innovation pour bâtir l’avenir.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('/images/services/electricity.png');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Electricité</h3>
+                            <p>Caméras et systèmes de sécurité intelligents.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="category" id="category-tech">
+                <h2 class="category-title">Transport & Agriculture</h2>
+
+                <div class="slider" data-duration="5000"> <!-- durée en ms -->
+                    <div class="slide active" style="background-image: url('/images/services/elevage.jpg');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Agriculture</h3>
+                            <p>Soutenir la production avec des solutions performantes et innovantes</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('/images/services/Delivery.jpeg');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Livraison</h3>
+                            <p>Assurer une livraison rapide et sécurisée jusqu’à vos clients</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="category" id="category-tech">
+                <h2 class="category-title">Sécurité electroniqué</h2>
+
+                <div class="slider" data-duration="5000"> <!-- durée en ms -->
+                    <div class="slide active" style="background-image: url('/images/services/AC.jpg');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Contrôle d’accès</h3>
+                            <p>Gérer l’accès à vos locaux en toute sécurité.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image: url('/images/services/Alarme.jpg');">
+                        <div class="overlay"></div>
+                        <div class="slide-content">
+                            <h3>Alarme et détection</h3>
+                            <p>Détecter et prévenir les intrusions avant qu’elles n’arrivent.</p>
+                        </div>
+
+                        <div class="timer" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" class="timer-svg" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" cx="50" cy="50" r="45"
+                                    stroke-linecap="round"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
         </div>
 
         <div class="space-y-4 p-2 mt-4">
             <h2 class="text-xl font-semibold text-slate-400">Ce qu'ils disent de nous📜</h2>
             <div class="w-full">
-                <ul
-                    class="grid min-[650px]:grid-cols-2 items-baseline justify-between rounded w-full space-y-4 space-x-4 bg-transparent p-2">
 
-                    <li data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="1000"
-                        class="rounded space-y-2 mt-2.5 bg-[#0A103E] shadow shadow-[#000] backdrop-blur-lg text-white p-2 ">
-                        <div class="flex space-x-2">
-                            <p>
-                                <img class="size-[45px] rounded-full" src="/images/profile.jpeg" alt="Roland Bilé" />
-                            </p>
-                            <p>
-                                <span class="italic">Roland Bilé</span> <br>
-                                <span class="italic text-slate-200">Eléveur</span>
-                            </p>
-                        </div>
-                        <p class="italic text-neutral-300">
-                            “J'ai été épaté par le professionnalisme et les compétences des agents de
-                            Genius. Je recommande leurs services.”
-                        </p>
-                    </li>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <x-ui.testimonial title="Eléveur professionnel" name="Roland Bilé"
+                        message="J'ai été épaté par le professionnalisme et les compétences des agents de
+                            Genius. Je recommande leurs services." />
 
-                    <li data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="1200"
-                        class="rounded space-y-2 mt-2.5 shadow shadow-[#000] bg-[#0A103E] backdrop-blur-lg text-white p-2 ">
-                        <div class="flex space-x-2">
-                            <p>
-                                <img class="size-[45px] rounded-full" src="/images/girl.jpeg" alt="Sandrine K." />
-                            </p>
-                            <p>
-                                <span class="italic">Sandrine K.</span> <br>
-                                <span class="italic text-slate-200">Particulier</span>
-                            </p>
-                        </div>
-                        <p class="italic text-neutral-300">
-                            “J'ai fait appel aux services de livraison de Genius Network Technology et j'ai été
+                    <x-ui.testimonial title="Gestionnaire de stocks" name="Sandrine Kouadio"
+                        message="J'ai fait appel aux services de livraison de Genius Network Technology et j'ai été
                             satisfaite du délai de livraison
-                            assez court.”
-                        </p>
-                    </li>
+                            assez court." />
+                </div>
 
-                </ul>
             </div>
         </div>
 
