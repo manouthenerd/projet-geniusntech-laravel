@@ -8,18 +8,13 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('/public/fonts/Lato.ttf');
+    src: url('/public/fonts/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/public/fonts/Poppins-Regular.ttf');
 }
 
-@font-face {
-    font-family: 'Manrope';
-    src: url('/public/fonts/Manrope.ttf');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    src: url('/public/fonts/Nunito.ttf');
-}
 
 @custom-variant dark (&:where(.dark, .dark *));
 

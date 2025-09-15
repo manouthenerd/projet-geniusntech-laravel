@@ -6,25 +6,21 @@
 <body class="overflow-x-hidden">
 
     <header class="w-full z-[999] min-h-10 p-2 bg-white font-thin sticky top-0">
-        <nav class="flex justify-around max-[960px]:justify-between max-[960px]:px-8 items-center">
+        <nav id="navbar" class="flex justify-around max-[960px]:justify-between max-[960px]:px-8 items-center text-[15px]">
             <a href="/">
                 <img src="/images/logo-genius.png" width="170" height="55" alt="logo de Genius Network Technology" />
             </a>
 
             <div id="mainLinks" class="flex gap-2 text-sm space-x-2 items-center max-[960px]:hidden">
-                <a @class(['text-[#025686]' => request()->is('/')]) class="font-bold" href="/">Accueil</a>
-                <a @class(['text-[#025686]' => request()->is('services')]) class="hover:text-[#025686] font-bold" href="/services" class="">Services</a>
-                <a @class(['text-[#025686]' => request()->is('blogs')]) class="hover:text-[#025686] font-bold" href="/blogs" class="font-bold">Blogs</a>
-                {{-- <a @class([
-                    'text-[#025686] font-bold' => request()->is('nos-realisations'),
-                ]) class="hover:text-[#025686]" href="/nos-realisations">Nos
-                    réalisations</a> --}}
-                    <a @class(['text-[#025686]' => request()->is('a-propos')]) class="hover:text-[#025686] font-bold" href="/a-propos" class="font-bold">À propos</a>
-                <a @class(['text-[#025686]' => request()->is('contact')]) class="hover:text-[#025686] font-bold" href="/contact">Contactez-nous</a>
+                <a @class(['text-[#068fcf] font-bold' => request()->is('/')]) href="/">Accueil</a>
+                <a @class(['text-[#068fcf] font-bold' => request()->is('services')]) class="hover:text-[#068fcf]  text-[#4a6f8a]" href="/services">Services</a>
+                <a @class(['text-[#068fcf] font-bold' => request()->is('blogs')]) class="hover:text-[#068fcf]  text-[#4a6f8a]" href="/blogs">Blogs</a>
+                    <a @class(['text-[#068fcf] font-bold' => request()->is('a-propos')]) class="hover:text-[#068fcf] text-[#4a6f8a]" href="/a-propos">À propos</a>
+                <a @class(['text-[#068fcf] font-bold' => request()->routeIs('contact')]) class="hover:text-[#068fcf] text-[#4a6f8a]" href="/contact">Contactez-nous</a>
             </div>
 
             <div class="max-[960px]:hidden text-sm rounded-md px-2 py-1 border-2 border-y-[#01699f] border-x-[#d2b957]">
-                <a @class(['text-[#025686] font-bold' => request()->is('espace')]) href="/login">Espace admin</a>
+                <a @class(['text-[#4a6f8a] font-bold text-[#4a6f8a]' => request()->is('espace')]) href="/login">Espace admin</a>
             </div>
 
             <livewire:menu-button />

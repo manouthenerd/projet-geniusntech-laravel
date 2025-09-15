@@ -35,7 +35,7 @@
                     <button
                         class="bg-black text-white font-bold border border-black ring-1 ring-black ring-offset-2 rounded p-2 text-center">
                         <a href="{{ route('contact') }}">
-                            Une idée de projet ? <span class="animate-pulse">📝</span>
+                            Une idée, un projet ? <span class="animate-pulse">📝</span>
                         </a>
                     </button>
                 </div>
@@ -120,7 +120,7 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1000">
                     <p class="flex items-center justify-between gap-2">
                         <span class="font-bold text-integer text-blue-500">+10</span>
-                        <span class="bg-blue-300 rounded-full p-1">
+                        <span class="bg-black rounded-full p-1">
                             <x-ui.svg.cctv></x-ui.svg.cctv>
                         </span>
                     </p>
@@ -130,7 +130,7 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1200">
                     <p class="flex items-center justify-between gap-2">
                         <span class="text-integer font-bold text-orange-500">+10</span>
-                        <span class="bg-orange-300 rounded-full p-1">
+                        <span class="bg-black rounded-full p-1">
                             <x-ui.svg.building></x-ui.svg.building>
                         </span>
                     </p>
@@ -140,7 +140,7 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1300">
                     <p class="flex items-center justify-between gap-2">
                         <span class="text-integer font-bold text-red-500">+07</span>
-                        <span class="bg-red-300 rounded-full p-1">
+                        <span class="bg-black rounded-full p-1">
                             <x-ui.svg.partner></x-ui.svg.partner>
                         </span>
                     </p>
@@ -150,7 +150,7 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1400">
                     <p class="flex items-center justify-between gap-2">
                         <span class="text-integer font-bold text-purple-500">+99%</span>
-                        <span class="bg-purple-300 rounded-full p-1">
+                        <span class="bg-black rounded-full p-1">
                             <x-ui.svg.badge-percentage></x-ui.svg.badge-percentage>
                         </span>
                     </p>

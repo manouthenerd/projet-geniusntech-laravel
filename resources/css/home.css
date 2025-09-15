@@ -1,3 +1,8 @@
+* {
+    font-family: Poppins, 'arial' !important;
+}
+
+
 .fit-box,
 #strength {
     height: fit-content !important;
@@ -33,7 +38,7 @@
 }
 
 #mainLinks a {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #award-genius-bg {
@@ -56,4 +61,14 @@
 .text-integer {
     font-size: 35px !important;
     text-shadow: 2px 2px 1px #000;
+}
+
+#navbar a {
+    font-size: 15px !important;
+    /* color: #4a6f8a; */
+    font-family: Poppins, 'arial';
+}
+
+#navbar a:hover {
+    color: #068fcf;
 }
