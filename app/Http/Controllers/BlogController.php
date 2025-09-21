@@ -14,13 +14,13 @@ class BlogController extends Controller
             return abort(404);
         }
         
-        $article = $blog->only(['id', 'title', 'category', 'summary', 'content', 'image']);
+        $article = $blog->only(['id', 'title', 'category', 'content', 'image']);
 
         // Récupérer d'autres articles de la même catégorie ou d'autres catégories
         $next_articles = Blog::where('id', '!=', $blog->id)
             ->inRandomOrder()
             ->limit(2)
-            ->get(['id', 'title', 'category', 'summary', 'content', 'image']);
+            ->get(['id', 'title', 'category', 'content', 'image']);
 
         return view('read-article', [
             'article' => $article, 
