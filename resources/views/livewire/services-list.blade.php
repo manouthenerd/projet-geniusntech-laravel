@@ -3,7 +3,7 @@
         <li data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000"
             class="grid grid-cols-2 gap-2 group p-2 rounded bg-white shadow-sm h-max">
             
-            <a href="/services/{{ $service['identifier'] }}" class="contents">
+            <a :href="route('service.show', $service['identifier'])" class="contents">
                 <div>
                     <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded-[1.2rem]"
                         src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : 'storage/' . $service['image'] }}"
