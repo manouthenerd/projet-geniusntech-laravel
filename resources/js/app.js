@@ -1,6 +1,7 @@
 import "./libs/trix";
 import "../css/app.css";
 import "../css/home.css";
+import "./countup.js"
 
 import AOS from "aos";
 import "aos/dist/aos.css";
