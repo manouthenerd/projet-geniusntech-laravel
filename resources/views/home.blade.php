@@ -122,7 +122,7 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
                     data-aos-duration="1200" data-aos-delay="1000">
                     <p class="flex items-center justify-between gap-2">
-                        <span class="font-bold text-integer text-blue-500">+10</span>
+                        <span id="project-counter" class="font-bold text-integer text-blue-500"></span>
                         <span class="bg-black rounded-full p-1">
                             <x-ui.svg.cctv></x-ui.svg.cctv>
                         </span>
@@ -133,18 +133,18 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
                     data-aos-duration="1200" data-aos-delay="1200">
                     <p class="flex items-center justify-between gap-2">
-                        <span class="text-integer font-bold text-orange-500">+10</span>
+                        <span id="company-counter" class="text-integer font-bold text-orange-500"></span>
                         <span class="bg-black rounded-full p-1">
                             <x-ui.svg.building></x-ui.svg.building>
                         </span>
                     </p>
-                    <p class="mt-4 text-[darkgray] font-semibold">Structures acompagnées</p>
+                    <p class="mt-4 text-[darkgray] font-semibold">Structures accompagnées</p>
                 </div>
 
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
                     data-aos-duration="1200" data-aos-delay="1300">
                     <p class="flex items-center justify-between gap-2">
-                        <span class="text-integer font-bold text-red-500">+07</span>
+                        <span id="partner-counter" class="text-integer font-bold text-red-500"></span>
                         <span class="bg-black rounded-full p-1">
                             <x-ui.svg.partner></x-ui.svg.partner>
                         </span>
@@ -155,7 +155,7 @@
                 <div class="reward-box flex flex-col justify-center rounded shadow p-4" data-aos="fade-left"
                     data-aos-duration="1200" data-aos-delay="1400">
                     <p class="flex items-center justify-between gap-2">
-                        <span class="text-integer font-bold text-purple-500">+99%</span>
+                        <span id="satisfaction-counter" class="text-integer font-bold text-purple-500"></span>
                         <span class="bg-black rounded-full p-1">
                             <x-ui.svg.badge-percentage></x-ui.svg.badge-percentage>
                         </span>
@@ -172,28 +172,6 @@
                     Découvrir tous nos services
                 </a>
             </div>
-            {{-- <div class="w-full">
-                <ul id="services" class="grid grid-cols-2 max-[830px]:grid-cols-1 w-full space-y-4 space-x-4">
-                    @foreach ($services as $service)
-                        <a href="services/{{ $service['identifier'] }}" data-aos="fade-up" data-aos-duration="1300"
-                            data-aos-delay="1000"
-                            class="grid grid-cols-2 group transition-colors gap-2 p-2 rounded bg-white shadow-sm max-h-auto hover:bg-[#80808012]">
-                            <div>
-                                <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                    src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : 'storage/' . $service['image'] }}"
-                                    alt="{{ $service['title'] }}" />
-                            </div>
-                            <div class="text-white flex flex-col justify-around">
-                                <h3 class="text-slate-400 group-hover:text-[#068fcf]">{{ $service['title'] }}</h3>
-                                <p class="text-slate-600 w-full">
-                                    {{ $service['summary'] }}
-                                </p>
-                            </div>
-                        </a>
-                    @endforeach
-
-                </ul>
-            </div> --}}
 
         </div>
 
@@ -260,7 +238,8 @@
                         <div class="overlay"></div>
                         <div class="slide-content">
                             <h3>Bâtiments et travaux publics</h3>
-                            <p>Des solutions solides et durables en construction et travaux publics, alliant qualité, expertise et innovation pour bâtir l’avenir.</p>
+                            <p>Des solutions solides et durables en construction et travaux publics, alliant qualité,
+                                expertise et innovation pour bâtir l’avenir.</p>
                         </div>
 
                         <div class="timer" aria-hidden="true">
@@ -389,38 +368,61 @@
             </div>
         </div>
 
+
         <div class="space-y-4 p-2 mt-4">
             <h2 class="text-xl font-semibold text-slate-400">Une intervention impéccable, une confiance
                 gagnée🫱🏾‍🫲🏾
             </h2>
-            <div class="w-full">
-                <ul id="partners"
-                    class="flex gap-2 max-[630px]:grid max-[630px]:grid-rows-2 max-[630px]:grid-cols-2 items-center">
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1000">
-                        <img class="size-[150px] object-fit" src="/images/partners/22 mai 2025, 14_24_30.png"
-                            alt="22 mai 2025, 14_24_30" />
-                    </li>
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1100">
-                        <img class="size-[150px] object-fit" src="/images/partners/ccci-ue.png" alt="ccci-ue" />
-                    </li>
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1200">
-                        <img class="size-[150px] object-fit" src="/images/partners/centamin.png" alt="centamin" />
-                    </li>
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1300">
-                        <img class="size-[150px] object-fit" src="/images/partners/envol.png" alt="envol" />
-                    </li>
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1400">
-                        <img class="size-[150px] object-fit" src="/images/partners/pdu.jpg" alt="pdu" />
-                    </li>
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1500">
-                        <img class="size-[150px] object-fit" src="/images/partners/seco.png" alt="seco" />
-                    </li>
-                    <li data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="1600">
-                        <img class="size-[150px] object-fit" src="/images/partners/uemoa.png" alt="uemoa" />
-                    </li>
+            <div class="partner-slider">
+                <div class="slider-track">
+                    <!-- Premier set -->
+                    <img src="/images/partners/agromap.png" alt="logo partenaire">
+                    <img src="/images/partners/ccci-ue.png" alt="logo partenaire">
+                    <img src="/images/partners/centamin.png" alt="logo partenaire">
+                    <img src="/images/partners/envol.png" alt="logo partenaire">
+                    <img src="/images/partners/seco.png" alt="logo partenaire">
+                    <img src="/images/partners/uemoa.png" alt="logo partenaire">
+                    <img src="/images/partners/pdu.jpg" alt="logo partenaire">
+                    <img src="/images/partners/aaci.jpg" alt="logo partenaire">
+                    <img src="/images/partners/attron.webp" alt="logo partenaire">
+                    <img src="/images/partners/coopewo.png" alt="logo partenaire">
+                    <img src="/images/partners/git.png" alt="logo partenaire">
+                    <img src="/images/partners/ocpv.jpg" alt="logo partenaire">
+                    <img src="/images/partners/saph.png" alt="logo partenaire">
+                    <img src="/images/partners/tgcc.png" alt="logo partenaire">
 
-                </ul>
 
+                    <!-- Deuxième set (duplication pour l'effet infini) -->
+                    <img src="/images/partners/agromap.png" alt="logo partenaire">
+                    <img src="/images/partners/ccci-ue.png" alt="logo partenaire">
+                    <img src="/images/partners/centamin.png" alt="logo partenaire">
+                    <img src="/images/partners/envol.png" alt="logo partenaire">
+                    <img src="/images/partners/seco.png" alt="logo partenaire">
+                    <img src="/images/partners/uemoa.png" alt="logo partenaire">
+                    <img src="/images/partners/pdu.jpg" alt="logo partenaire">
+                    <img src="/images/partners/aaci.jpg" alt="logo partenaire">
+                    <img src="/images/partners/attron.webp" alt="logo partenaire">
+                    <img src="/images/partners/coopewo.png" alt="logo partenaire">
+                    <img src="/images/partners/git.png" alt="logo partenaire">
+                    <img src="/images/partners/ocpv.jpg" alt="logo partenaire">
+                    <img src="/images/partners/saph.png" alt="logo partenaire">
+                    <img src="/images/partners/tgcc.png" alt="logo partenaire">
+
+                    <img src="/images/partners/agromap.png" alt="logo partenaire">
+                    <img src="/images/partners/ccci-ue.png" alt="logo partenaire">
+                    <img src="/images/partners/centamin.png" alt="logo partenaire">
+                    <img src="/images/partners/envol.png" alt="logo partenaire">
+                    <img src="/images/partners/seco.png" alt="logo partenaire">
+                    <img src="/images/partners/uemoa.png" alt="logo partenaire">
+                    <img src="/images/partners/pdu.jpg" alt="logo partenaire">
+                    <img src="/images/partners/aaci.jpg" alt="logo partenaire">
+                    <img src="/images/partners/attron.webp" alt="logo partenaire">
+                    <img src="/images/partners/coopewo.png" alt="logo partenaire">
+                    <img src="/images/partners/git.png" alt="logo partenaire">
+                    <img src="/images/partners/ocpv.jpg" alt="logo partenaire">
+                    <img src="/images/partners/saph.png" alt="logo partenaire">
+                    <img src="/images/partners/tgcc.png" alt="logo partenaire">
+                </div>
             </div>
         </div>
 
