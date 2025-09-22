@@ -5,8 +5,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Livewire\BlogCatalog;
 use App\Livewire\Auth\Login;
-use App\Livewire\Blogs;
+use App\Livewire\BlogArticles;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -18,8 +19,8 @@ Route::get('/services/{slug}',[ServiceController::class, 'show'] )->name('servic
 Route::get('/nos-realisations', [AchievementController::class, 'index'])->name('achievements');
 
 
-Route::get("/blogs", Blogs::class)->name('blogs');
-Route::get("/blogs/{blog}", [BlogController::class, 'show'])->name('blog');
+Route::get("/blogs", [BlogController::class, 'index'])->name('blogs');
+Route::get("/blogs/{blog}", [BlogController::class, 'show'])->name('blogs.show');
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
