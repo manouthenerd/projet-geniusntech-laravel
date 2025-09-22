@@ -13,8 +13,10 @@
 
     <flux:navbar class="-mb-px max-[700px]:hidden">
 
-        <flux:navbar.item icon="home" href="{{ route('dashboard') }}" :current="request()->is('dashboard')">
-            Accueil
+    
+        <flux:navbar.item icon="newspaper" badge="{{ $global_service_counter }}"
+            href="{{ route('dashboard.services') }}" :current="request()->is('dashboard/services')">
+            Services
         </flux:navbar.item>
 
         <flux:navbar.item icon="globe-alt" badge="{{ $global_blog_counter }}" href="{{ route('dashboard.blogs') }}"
@@ -22,13 +24,8 @@
             Blogs
         </flux:navbar.item>
 
-        <flux:navbar.item icon="newspaper" badge="{{ $global_service_counter }}"
-            href="{{ route('dashboard.services') }}" :current="request()->is('dashboard/services')">
-            Services
-        </flux:navbar.item>
 
-        <flux:navbar.item icon="user-group" badge="0" href="{{ route('dashboard.achievement') }}"
-            :current="request()->is('dashboard/achievements')">
+        <flux:navbar.item icon="user-group" badge="0" href="">
             Projets
         </flux:navbar.item>
 

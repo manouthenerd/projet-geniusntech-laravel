@@ -10,8 +10,6 @@
 
     <x-partials.dashboard-sidebar />
 
-    <livewire:alert />
-
     <flux:main container>
         <x-partials.dashboard-heading />
 
