@@ -11,7 +11,9 @@ export default defineConfig({
                 'resources/css/app.css', 
                 'resources/js/app.js', 
                 'resources/css/dashboard.css',
-                'resources/js/dashboard.js'
+                'resources/js/dashboard.js',
+                'resources/js/home.css',
+                'resources/js/countup.js',
             ],
             refresh: true,
         }),
