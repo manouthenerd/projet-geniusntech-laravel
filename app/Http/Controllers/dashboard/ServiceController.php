@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\dashboard;
 
-use App\Models\Upload;
 use App\Models\Service;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
@@ -37,57 +35,65 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title'         => ['required', 'string'],
-            'summary'       => ['required', 'string'],
-            'description'    => ['required', 'string'],
-            'image'         => ['required', 'file']
+            'title'       => ['required', 'string'],
+            'summary'     => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'image'       => ['required', 'file', 'image', 'max:10240'], // max 10Mo
         ]);
 
-        $image_path = Upload::store($validated['image'], 'services');
+        // Générer un nom unique pour l'image
+        $imageName = time() . '_' . uniqid() . '.' . $validated['image']->getClientOriginalExtension();
 
-         if(! (bool) $image_path) {
-            return back()->withErrors(['image' => "La taille de l'image doit être ≤ 10Mo"]);
-        }
+        // Déplacer le fichier dans public/images
+        $validated['image']->move(public_path('images/services'), $imageName);
+
+        // Stocker le chemin relatif dans la BDD
+        $image_path = '/images/services/' . $imageName;
 
         Service::create([
-            'title'         => $validated['title'],
-            'summary'       => $validated['summary'],
-            'image'         => $image_path,
-            'description'   => $validated['description'],
-            'identifier'    => Str::slug($validated['title'])
+            'title'       => $validated['title'],
+            'summary'     => $validated['summary'],
+            'description' => $validated['description'],
+            'image'       => $image_path,
+            'identifier'  => Str::slug($validated['title']),
         ]);
 
-        return redirect(route('dashboard.services'));
-
+        return redirect()->route('dashboard.services');
     }
+
 
     public function update(Request $request, Service $service)
     {
-
-        $image_path = "";
-
-        $request->validate([
-            'title'         => ['required', 'string'],
-            'summary'       => ['required', 'string'],
-            'image'         => ['required', 'sometimes', 'image'],
-            'description'   => ['required', 'string']
+        $validated = $request->validate([
+            'title'       => ['required', 'string'],
+            'summary'     => ['required', 'string'],
+            'image'       => ['sometimes', 'image', 'max:10240'], // facultatif, max 10Mo
+            'description' => ['required', 'string'],
         ]);
 
-        $image = $request->file('image');
+        // Vérifier si une nouvelle image a été uploadée
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
 
-        if ((bool) $image) {
-            $image_path = Upload::store($image, "services");
+            // Générer un nom unique
+            $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+
+            // Déplacer dans public/images/services
+            $image->move(public_path('images/services'), $imageName);
+
+            // Stocker le chemin relatif
+            $service->image = '/images/services/' . $imageName;
         }
 
-        // Modification des données
-        $service->title = $request->input('title');
-        $service->summary = $request->input('summary');
-        $service->image = $image ? $image_path : $service->image;
-        $service->description = $request->input('description');
+        // Mettre à jour les autres champs
+        $service->title = $validated['title'];
+        $service->summary = $validated['summary'];
+        $service->description = $validated['description'];
 
         // Enregistrer les modifications
         $service->save();
 
-        return redirect(route('dashboard.show-service', ['service' => $service->id]));
+        return redirect()->route('dashboard.services.show', ['service' => $service->id])
+            ->with('success', 'Service mis à jour avec succès !');
     }
 }

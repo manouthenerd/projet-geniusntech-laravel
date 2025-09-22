@@ -27,13 +27,14 @@ class DashboardServices extends Component
         abort_if(! $service, 403);
         abort_if(! request()->user(), 403);
 
-        // Supprimer l'image du serveur
-        Storage::disk("public")->delete($service->image);
+        // Supprimer l'image si elle existe
+        if ($service->image && file_exists(public_path($service->image))) {
+            unlink(public_path($service->image));
+        }
 
-        // Supprimer ensuite le service
+        // Supprimer le service
         $service->delete();
 
-        return redirect(route('dashboard.services'));
-
+        return redirect()->route('dashboard.services');
     }
 }

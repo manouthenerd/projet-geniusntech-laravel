@@ -1,7 +1,7 @@
 <div>
 
     <section>
-        <div class="flex justify-between items-center p-2">
+        <div class="flex gap-4 flex-wrap justify-between items-center p-2 max-[430px]:grid max-[430px]:gap-2">
             <h3 class="underline text-danger">Vos services actuels</h3>
 
             <div>
@@ -21,13 +21,13 @@
                             class="grid grid-cols-2 my-2 max-[830px]:grid-cols-1 w-full space-y-4 space-x-4">
 
                             @foreach ($services as $service)
-                                <li href="dashboard/services/{{ $service['identifier'] }}" data-aos="fade-up"
+                                <li wire:navigate data-aos="fade-up"
                                     data-aos-duration="1200" data-aos-delay="1000"
                                     class="space-y-4 hover:bg-accent-foreground gap-2 p-2 rounded bg-white shadow-sm h-max">
 
                                     <div>
                                         <img class="object-fit max-[830px]:object-cover max-[830px]:w-full h-[136px] rounded"
-                                        src="{{ str_starts_with($service['image'], '/images/') ? $service['image'] : '/storage/'. $service['image'] }}" alt="image d'illustration de {{ $service['title'] }}" />
+                                        src="{{ $service['image'] }}" alt="image d'illustration de {{ $service['title'] }}" />
                                     </div>
 
                                     <div class="text-white flex flex-col justify-around">
@@ -37,8 +37,8 @@
                                         </p>
                                     </div>
 
-                                    <div>
-                                        <flux:button href="services/{{ $service['id'] }}">
+                                    <div class="flex flex-wrap gap-4 ">
+                                        <flux:button :href="route('dashboard.services.show', $service['id'] )" wire:navigate>
                                             <flux:badge color="blue">Modifier</flux:badge>
                                         </flux:button>
                                         <flux:button type="submit" wire:click="destroy({{ $service['id'] }})" class="cursor-pointer">
