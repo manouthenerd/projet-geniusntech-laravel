@@ -1,88 +1,89 @@
-  <x-slot:head_title>
-      Catalogue des blogs
-  </x-slot:head_title>
-  <section>
+<div>
+    <x-slot:title>Dashboard Blogs</x-slot:title>
 
-      <div class="flex justify-around gap-4 items-center mt-4 max-[880px]:grid max-[880px]:grid-cols-1">
-          <div class="flex flex-wrap justify-center gap-4 items-center">
+    {{-- Filtres --}}
+    <div class="flex justify-between gap-4 items-center m-[1.2em] max-[980px]:grid max-[980px]:grid-cols-1">
+        <div class="flex py-4 flex-nowrap overflow-x-scroll gap-4 items-center">
+            <flux:button wire:click="getByCategory('all')">
+                <flux:badge color="{{ $selectedCategory === 'all' ? 'blue' : '' }}">Toutes catégories</flux:badge>
+            </flux:button>
+            @foreach($categories as $category)
+                <flux:button wire:click="getByCategory('{{ $category }}')">
+                    <flux:badge color="{{ $selectedCategory === $category ? 'blue' : '' }}">{{ $category }}</flux:badge>
+                </flux:button>
+            @endforeach
+        </div>
 
-              <flux:button wire:click="getByCategory('all')" class="hover:cursor-pointer">
-                  <flux:badge color="{{ $selectedCategory == 'all' ? 'blue' : '' }}">Toutes catégories</flux:badge>
-              </flux:button>
+        <div>
+            <flux:input type="search" icon="magnifying-glass" placeholder="Titre de l'article..." wire:model.debounce.300ms="search" />
+        </div>
+    </div>
 
-              @foreach ($categories as $category)
-                  <flux:button wire:click="getByCategory('{{ $category }}')" class="hover:cursor-pointer">
-                      <flux:badge color="{{ $selectedCategory == $category ? 'blue' : '' }}">
-                          {{ $category }}
-                      </flux:badge>
-                  </flux:button>
-              @endforeach
-          </div>
+    {{-- Premier article highlight --}}
+    @if($first_article)
+    <div class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow rounded p-2 bg-[#00669A] mb-4">
+        <div>
+            <img class="h-72 w-full object-cover rounded" src="{{ $first_article->image }}" alt="{{ $first_article->title }}">
+        </div>
+        <div class="flex flex-col justify-between p-2">
+            <h4 class="text-white font-bold underline">{{ $first_article->title }}</h4>
+            <div class="flex justify-between items-center">
+                <span class="text-xs text-white">{{ $first_article->created_at->format('d-m-Y') }}</span>
+                <div class="flex gap-2">
+                    <flux:button wire:click="edit({{ $first_article->id }})" size="sm" color="blue">Modifier</flux:button>
+                    <flux:button wire:click="destroy({{ $first_article->id }})" size="sm" color="red">Supprimer</flux:button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 
-          <div class="flex items-center gap-4 space-x-2">
-              <flux:input class="hover:cursor-pointer" icon="magnifying-glass" placeholder="Titre de l'article..."
-                  wire:key="search" wire:model.live.debounce.250ms="search" />
+    {{-- Grille des autres articles --}}
+    @if($articles->count() > 0)
+    <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 gap-4">
+        @foreach($articles as $article)
+        <li class="grid gap-2 shadow rounded p-2 bg-[#00669A] hover:bg-white">
+            <img class="h-48 w-full object-cover rounded" src="{{ $article->image }}" alt="{{ $article->title }}">
+            <h5 class="text-white font-bold">{{ $article->title }}</h5>
+            <div class="flex justify-between items-center">
+                <span class="text-xs text-white">{{ $article->created_at->format('d-m-Y') }}</span>
+                <div class="flex gap-2">
+                    <flux:button wire:click="edit({{ $article->id }})" size="sm" color="blue">Modifier</flux:button>
+                    <flux:button wire:click="destroy({{ $article->id }})" size="sm" color="red">Supprimer</flux:button>
+                </div>
+            </div>
+        </li>
+        @endforeach
+    </ul>
+    @endif
 
-              <flux:button variant="primary" size="sm" href="blogs/create" icon="plus" />
-          </div>
+    {{-- Formulaire d'édition --}}
+    @if($editArticleId)
+    <div class="mt-6 p-4 border rounded bg-white">
+        <h3 class="font-bold text-lg mb-4">Modifier l'article</h3>
+        <form wire:submit.prevent="update" class="space-y-4">
+            <div>
+                <label>Titre</label>
+                <input type="text" wire:model="title" class="border p-2 w-full rounded" required>
+            </div>
+            <div>
+                <label>Contenu</label>
+                <textarea wire:model="content" class="border p-2 w-full rounded" rows="5" required></textarea>
+            </div>
+            <div>
+                <label>Catégorie</label>
+                <input type="text" wire:model="category" class="border p-2 w-full rounded" required>
+            </div>
+            <div>
+                <label>Image</label>
+                <input type="file" wire:model="image" class="border p-2 w-full rounded">
+                @if($imagePreview)
+                    <img src="{{ $imagePreview }}" class="h-32 mt-2 rounded">
+                @endif
+            </div>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Enregistrer</button>
+        </form>
+    </div>
+    @endif
 
-      </div>
-
-      <article class="grid p-2 border border-slate-100 rounded w-full mt-4">
-          <div class="grid grid-cols-1 p-2 bg-zinc-50">
-              <div>
-                  @if ($first_article)
-                      <div
-                          class="grid grid-cols-2 max-[880px]:grid-cols-1 shadow shadow-zinc-200 rounded p-2 bg-white blog">
-                          <div>
-                              <img style="height: 300px;width: 100%;object-fit: cover;" class="rounded"
-                                  src="{{ asset($first_article->image) }}" alt="image d'illustration de l'article">
-                          </div>
-                          <div class="flex flex-col justify-evenly p-2">
-                              <h4 class="text-zinc-600">{{ $first_article->title }}</h4>
-                              <div class="text-zinc-500">
-                                  <div class="h-[150px] overflow-hidden">{!! $first_article->content !!}</div>
-                                  <div class="text-xs text-zinc-600 space-y-4">
-                                      <p class="ml-1">Genius Admin •
-                                          {{ \Carbon\Carbon::parse($first_article->created_at)->format('d-m-y') }}</p>
-                                      <div class="flex gap-4">
-                                          <flux:button wire:navigate size="sm" color="blue"
-                                              href="/dashboard/blogs/{{ $first_article->id }}">
-                                              Modifier
-                                          </flux:button>
-
-                                          <form method="post"
-                                              action="{{ route('dashboard.show-blog', ['blog' => $first_article->id]) }}">
-                                              @csrf
-                                              @method('DELETE')
-                                              <flux:button type='submit' size="sm" color="yellow">
-                                                  Supprimer
-                                              </flux:button>
-                                          </form>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  @endif
-              </div>
-              <ul class="grid grid-cols-3 max-[850px]:grid-cols-2 max-[600px]:grid-cols-1 p-2 gap-2 bg-zinc-50">
-                  @if (!empty($articles))
-
-
-                      @foreach ($articles as $article)
-                          <x-partials.blog-card id="{{ $article->id }}" title="{{ $article->title }}"
-                              image="{{ $article->image }}"
-                              date="{{ \Carbon\Carbon::parse($first_article->created_at)->format('d-m-y') }}" />
-                      @endforeach
-                  @endif
-              </ul>
-
-              @if (!$first_article)
-                  <div class="text-center text-zinc-400 py-8">
-                      <p>Aucun article trouvé.</p>
-                  </div>
-              @endif
-
-      </article>
-  </section>
+</div>

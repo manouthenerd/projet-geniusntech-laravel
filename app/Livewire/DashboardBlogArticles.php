@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Blog;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class DashboardArticles extends Component
+
+class DashboardBlogArticles extends Component
 {
+
     use WithFileUploads;
 
     public $first_article;
@@ -52,20 +54,10 @@ class DashboardArticles extends Component
             $query->where('title', 'like', "%{$this->search}%");
         }
 
-        $allArticles = $query->orderBy('created_at', 'desc')->get(['id','title','content','image','category','created_at']);
+        $allArticles = $query->orderBy('created_at', 'desc')->get(['id', 'title', 'content', 'image', 'category', 'created_at']);
 
         $this->first_article = $allArticles->first();
         $this->articles = $allArticles->count() > 1 ? $allArticles->slice(1) : collect();
-    }
-
-    public function edit(Blog $article)
-    {
-        $this->editArticleId = $article->id;
-        $this->title = $article->title;
-        $this->content = $article->content;
-        $this->category = $article->category;
-        $this->imagePreview = $article->image;
-        $this->image = null;
     }
 
     public function update()
@@ -80,14 +72,15 @@ class DashboardArticles extends Component
         ]);
 
         if ($this->image) {
+
             // Supprime l’ancienne image si existante
             if ($article->image && file_exists(public_path($article->image))) {
                 unlink(public_path($article->image));
             }
 
-            $imageName = time().'_'.uniqid().'.'.$this->image->getClientOriginalExtension();
+            $imageName = time() . '_' . uniqid() . '.' . $this->image->getClientOriginalExtension();
             $this->image->storeAs('images/blogs', $imageName, 'public');
-            $article->image = '/storage/images/blogs/'.$imageName;
+            $article->image = '/images/blogs/' . $imageName;
         }
 
         $article->title = $this->title;
@@ -120,8 +113,9 @@ class DashboardArticles extends Component
         $this->imagePreview = null;
     }
 
+  
     public function render()
     {
-        return view('livewire.dashboard-articles');
+        return view('livewire.dashboard-blog-articles');
     }
 }

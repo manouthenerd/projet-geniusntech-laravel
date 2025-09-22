@@ -10,8 +10,9 @@
 
             <div
                 class="mt-5 p-4 relative z-10 bg-[#FAFAFA] border border-gray-200 rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
-                <form method="post" action="{{ route('dashboard.save-blog', ['blog' => $id]) }}" class="p-2 space-y-4" enctype="multipart/form-data">
+                <form method="post" action="{{ route('dashboard.blogs.update', ['blog' => $id]) }}" class="p-2 space-y-4" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-4 sm:mb-8">
                         <label for="hs-feedback-post-comment-name-1"
                             class="block mb-2 text-zinc-400 text-sm font-medium dark:text-white">

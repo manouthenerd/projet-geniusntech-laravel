@@ -7,7 +7,7 @@ use App\Models\Upload;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ArticleFormRequest;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -44,72 +44,47 @@ class BlogController extends Controller
         return view('article.edit-article', ['article' => $article, 'id' => $article['id'], 'title' => "Modification de l'article"]);
     }
 
-    public function save(Blog $blog, ArticleFormRequest $request)
+    public function update(Blog $blog, ArticleFormRequest $request)
     {
-        if ($request->file('image')) {
+        $article = $blog;
 
-            // Récuperer l'image contenu dans la requête
-            $image_file = $request->file('image');
+        if ($request->image) {
 
-            // Enregistrer l'image après traitement ou déclencher une erreur
-            $image_path = Upload::store($image_file, 'articles');
-
-            if (! (bool) $image_path) {
-                return back()->withErrors(['image' => "La taille de l'image doit être ≤ 10Mo"]);
+            // Supprime l’ancienne image si existante
+            if ($article->image && file_exists(public_path($article->image))) {
+                unlink(public_path($article->image));
             }
 
-            if ((bool) $image_path) {
-
-                // Récupérer l'article et modifier les informations
-                $updated_article = Blog::editArticle($blog->id, $request->title, $request->category, $request->content, $image_path);
-
-                if ((bool) $updated_article) {
-                    Storage::disk('public')->delete($blog->image);
-                }
-            }
-
-            return redirect()->back()->with(['success_message' => "Article modifié avec succès !✅"]);
-        } else {
-            $updated_article = Blog::editArticle($blog->id, $request->title, $request->category, $request->content, $blog->image);
-
-            return redirect()->back()->with(['success_message' => "Article modifié avec succès !✅"]);
+            $imageName = time() . '_' . uniqid() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('images/articles'), $imageName);
+            $article->image = '/images/articles/' . $imageName;
         }
+
+        $article->title = $request->title;
+        $article->content = $request->content;
+        $article->category = $request->category;
+        $article->save();
+
+        return redirect()->back();
     }
 
     public function store(ArticleFormRequest $request)
     {
-        // Récuperer l'image contenu dans la requête
-        $image_file = $request->file('image');
+        DB::transaction(function () use ($request) {
 
-        // Enregistrer l'image après traitement ou déclencher une erreur
-        $image_path = Upload::store($image_file, 'articles');
+            $imageName = time() . '_' . uniqid() . '.' . $request->image->getClientOriginalExtension();
 
-        if (! (bool) $image_path) {
-            return back()->withErrors(['image' => "La taille de l'image doit être ≤ 10Mo"]);
-        }
+            Blog::create([
+                'title' => $request->title,
+                'content' => $request->content,
+                'image' => '/images/articles/' . $imageName,
+                'category' => $request->category,
+            ]);
 
-        if ((bool) $image_path) {
-
-            // Récupérer l'article et modifier les informations
-            Blog::createArticle($request->title, $request->category, $request->content, $image_path);
-        }
+            // Déplacer le fichier dans public/images
+            $request->image->move(public_path('images/articles'), $imageName);
+        });
 
         return redirect('/dashboard/blogs');
-    }
-
-    public function destroy(Blog $blog)
-    {
-
-        if (! (bool) $blog) {
-            return redirect()->back();
-        }
-
-        // Supprimer l'image du serveur
-        Storage::disk("public")->delete($blog->image);
-
-        // Supprimer ensuite le blog
-        $blog->delete();
-
-        return redirect()->back();
     }
 }
