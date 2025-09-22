@@ -178,7 +178,81 @@
   scale: 0.95;
 }
 
-#alert {
-    z-index: 999 !important;
-    border-left: 5px solid #00c950;
+/* Container du slider */
+.partner-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  /* hauteur du slider */
+  display: flex;
+  align-items: center;
+}
+
+/* Track qui défile */
+.slider-track {
+  display: flex;
+  gap: 2rem;
+  /* espace entre les logos */
+  animation: scroll 16s linear infinite;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Images */
+.partner-slider img {
+  height: 80px;
+  /* ajustable */
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+  height: 70px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* Animation infinie */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+    /* défile la moitié (puisque duplicata) */
+  }
+}
+
+/* Effet flou sur les bords */
+.partner-slider::before,
+.partner-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  /* largeur de la zone floue */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partner-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #ffedd58a, #dbeafe8d);
+  backdrop-filter: blur(0.5px);
+}
+
+.partner-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #ffedd58a, #dbeafe8d);
+  backdrop-filter: blur(0.5px);
+}
+
+@media screen and (max-width: 730px) {
+  .slider-track {
+    display: flex;
+    gap: 2rem;
+    /* espace entre les logos */
+    animation: scroll 12s linear infinite;
+  }
 }
