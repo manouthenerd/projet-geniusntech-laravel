@@ -4,7 +4,7 @@
         <div class="w-full min-h-150 overflow-hidden text-white grid min-[750px]:grid-cols-2">
             <div class="p-4 min-[750px]:mt-8 grid gap-2">
 
-                <div id="strength" data-aos="fade-up" data-aos-duration="1200"
+                <div id="strength"
                     class="text-4xl space-y-1.5 font-bold rounded backdrop-blur-xl bg-transparent max-[750px]:backdrop-blur-none max-[750px]:bg-[#00000045] p-1">
                     <p>Innovation.</p>
                     <p>Connectivité.</p>

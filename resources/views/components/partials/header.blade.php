@@ -11,8 +11,10 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
 
-    <link rel="stylesheet" href="/build/css/app2.css">
-    <link rel="stylesheet" href="/build/css/home.css">
-    <script src="/build/js/app2.js" defer></script>
+    {{-- <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/countup.js" defer></script> --}}
+
+    @vite(['public/css/app.css', 'public/js/app.js'])
 
 </head>
