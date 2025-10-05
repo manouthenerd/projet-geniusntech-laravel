@@ -1,0 +1,258 @@
+* {
+  font-family: Poppins, 'arial' !important;
+}
+
+
+.fit-box,
+#strength {
+  height: fit-content !important;
+}
+
+#header-section {
+  background-image: url('/images/tech.jpg');
+  background-position: top/right;
+  background-size: cover;
+  background-clip: padding-box;
+}
+
+#services {
+  align-items: last baseline;
+}
+
+#partners li img {
+  object-fit: contain;
+}
+
+#close-mark {
+  position: fixed;
+  right: 12px;
+  top: 11px;
+  color: #a6a6a6;
+  fill: #a6a6a6;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 14px;
+  }
+}
+
+#mainLinks a {
+  font-weight: 400;
+}
+
+#award-genius-bg {
+  height: 250px !important;
+}
+
+#award-container {
+  background: black;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.reward-box {
+  align-items: normal;
+  background: #00000052;
+  backdrop-filter: blur(200px);
+}
+
+.text-integer {
+  font-size: 35px !important;
+  text-shadow: 2px 2px 1px #000;
+}
+
+#navbar a {
+  font-size: 15px !important;
+  /* color: #4a6f8a; */
+  font-family: Poppins, 'arial';
+}
+
+#navbar a:hover {
+  color: #068fcf;
+}
+
+/* From Uiverse.io by gharsh11032000 */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 360px;
+  padding: 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  line-height: 1.6;
+  border: 1px solid #cccccc;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  background: linear-gradient(to bottom,
+      /* direction "to bottom" = top → bottom */
+      #FFEDD5,
+      /* from-orange-100 */
+      #FFFFFF,
+      /* via-white */
+      #DBEAFE
+      /* to-blue-100 */
+    );
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 8px;
+  color: #000000;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content .quotes {
+  width: 48px;
+  height: 48px;
+}
+
+.content .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.content .para {
+  z-index: 1;
+  opacity: 0.8;
+  font-size: 16px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover {
+  box-shadow: 8px 8px #194F77;
+  border-color: #194F77;
+  transform: translate(-8px, -8px);
+}
+
+.button {
+  position: relative;
+  font-family: inherit;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 4px 0px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #000000;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+.button span {
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  width: 112%;
+  height: 1px;
+  left: 0%;
+  bottom: 0%;
+  background: #194F77;
+  pointer-events: none;
+  margin: auto;
+  transition: transform 0.64s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.button:active {
+  scale: 0.95;
+}
+
+/* Container du slider */
+.partner-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  /* hauteur du slider */
+  display: flex;
+  align-items: center;
+}
+
+/* Track qui défile */
+.slider-track {
+  display: flex;
+  gap: 2rem;
+  /* espace entre les logos */
+  animation: scroll 16s linear infinite;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Images */
+.partner-slider img {
+  height: 80px;
+  /* ajustable */
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+  height: 70px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* Animation infinie */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+    /* défile la moitié (puisque duplicata) */
+  }
+}
+
+/* Effet flou sur les bords */
+.partner-slider::before,
+.partner-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  /* largeur de la zone floue */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partner-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #ffedd58a, #dbeafe8d);
+  backdrop-filter: blur(0.5px);
+}
+
+.partner-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #ffedd58a, #dbeafe8d);
+  backdrop-filter: blur(0.5px);
+}
+
+@media screen and (max-width: 730px) {
+  .slider-track {
+    display: flex;
+    gap: 2rem;
+    /* espace entre les logos */
+    animation: scroll 12s linear infinite;
+  }
+}

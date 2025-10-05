@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@import "../../node_modules/preline/variants.css";
+@source "../../node_modules/preline/dist/*.js";
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+
+@theme {
+
+    --color-zinc-50: #fafafa;
+    --color-zinc-100: #f5f5f5;
+    --color-zinc-200: #e5e5e5;
+    --color-zinc-300: #d4d4d4;
+    --color-zinc-400: #a3a3a3;
+    --color-zinc-500: #737373;
+    --color-zinc-600: #525252;
+    --color-zinc-700: #404040;
+    --color-zinc-800: #262626;
+    --color-zinc-900: #171717;
+    --color-zinc-950: #0a0a0a;
+
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-white);
+        --color-accent-content: var(--color-white);
+        --color-accent-foreground: var(--color-neutral-800);
+    }
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+#strength,
+.fit-box {
+    height: fit-content !important;
+}
+
+header {
+    font-family: "Nunito", serif;
+    box-shadow: 1px 2px 2px #d3cdcd;
+}
+
+#mainLinks a:hover {
+    transition: all .5s ease;
+}
+
+#mobile-navbar {
+    transition: all .5s ease;
+    top: -250px;
+    box-shadow: 1px 1px 1px #bcbcbc;
+    z-index: 2;
+}
+
+#mobile-navbar a {
+    transition: all .3s ease;
+}
+
+.mobile-open {
+    top: 4.6rem !important;
+}
+
+body {
+    font-family: 'poppins', sans-serif !important;
+}
+
+footer {
+    font-family: 'Lato', sans-serif !important;
+}
+
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: #025686;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition:
+        stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.glass {
+    transition: all .5s ease;
+}
+
+.glass:hover {
+    transform: scale(1.05);
+}
+
+.blog {
+    border: 2px solid transparent;
+    transition: all .4s;
+}
+
+.blog:hover {
+
+    border-color: rgba(230, 226, 226, 0.463);
+
+}
+
+#services a {
+    transition: all .4s;
+}
+
+#logout-button {
+    align-self: center;
+}
+
+list {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+#text-editor {
+    min-height: 200px;
+}
+
+/* Animation pour les messages d'erreur/succès */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* layout général */
+.category {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.category-title {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #053A4A;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* slider */
+.slider {
+  position: relative;
+  height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* chaque slide couvre le slider, on gère le fade via opacity */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  display: flex;
+  align-items: flex-end; /* contenu en bas */
+  justify-content: flex-start;
+  padding: 28px;
+  box-sizing: border-box;
+  gap: 16px;
+}
+
+/* slide visible */
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* overlay sombre pour lisibilité */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* contenu texte (toujours au-dessus de l'overlay) */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 62%;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.slide-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.35rem;
+}
+.slide-content p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* timer */
+.timer {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+}
+
+/* SVG timer */
+.timer-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* démarre en haut */
+  display: block;
+}
+
+/* fond du cercle (gris léger) */
+.timer-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.18);
+  stroke-width: 6;
+}
+
+/* trait progress (sera animé via JS) */
+.timer-progress {
+  fill: none;
+  stroke: #9D8C47; /* couleur du timer */
+  stroke-width: 6;
+  stroke-linecap: round;
+  /* stroke-dasharray et stroke-dashoffset définis par JS dynamiquement */
+  transition: stroke-dashoffset 120ms linear;
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  .slide-content { max-width: 80%; }
+  .category-title { font-size: 1.6rem; }
+  .slider { height: 320px; }
+}
