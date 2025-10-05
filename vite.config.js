@@ -8,12 +8,12 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                '/css/app.css', 
-                '/js/app.js', 
-                '/css/dashboard.css',
-                '/js/dashboard.js',
-                '/css/home.css',
-                '/js/countup.js',
+                '/public/css/app.css', 
+                '/public/js/app.js', 
+                '/public/css/dashboard.css',
+                '/public/js/dashboard.js',
+                '/public/css/home.css',
+                '/public/js/countup.js',
             ],
             refresh: true,
         }),

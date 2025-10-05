@@ -11,9 +11,8 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
 
-    {{-- <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/home.css">
-    <script src="js/countup.js" defer></script> --}}
+    {{-- <link rel="stylesheet" href="/css/app.css">
+    <script src="js/app.js" defer></script> --}}
 
     @vite(['public/css/app.css', 'public/js/app.js'])
 
